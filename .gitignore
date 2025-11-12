@@ -1,0 +1,9 @@
+# Ignore config with secrets
+/venv/
+.env
+*.env
+__pycache__/
+talentlms_config.py
+*.pyc
+import_log_*.json
+*.pdf

@@ -1,0 +1,3371 @@
+{
+	"info": {
+		"name": "lms-integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Access token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "your client id here",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "your client secret here",
+							"type": "text"
+						}
+					],
+					"options": {}
+				},
+				"url": {
+					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Review Remove Membership Notification",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/core/v1/event-notification-messages",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"core",
+						"v1",
+						"event-notification-messages"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18. Bad Request - [Complete] - When Legal address 1 is not passed in the request",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9200525655723_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"complete\"}},\"onboardingExperienceCode\":{\"code\":\"default\"},\"employmentEligibilityOptionCode\":{\"code\":\"0\"},\"preHireIndicator\":true,\"employmentEligibilityProfile\":{\"employerOrganization\":{\"locationNameCode\":{\"code\":\"2554683735_1\"}}},\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Tom\",\"middleName\":\"M\",\"familyName\":\"Taylor\"},\"legalName\":{\"givenName\":\"sam\",\"familyName\":\"Taylor\",\"salutations\":[{\"code\":\"Mr.\"}],\"generationAffix\":{\"code\":\"2nd\"},\"qualificationAffix\":{\"code\":\"MD\"}},\"preferredGenderPronounCode\":{\"code\":\"He/Him/His\"},\"preferredName\":{\"nickName\":\"Nick\"},\"genderCode\":{\"code\":\"M\"},\"genderReportingDetails\":{\"reportedGenderCode\":{\"code\":\"M\"}},\"birthDate\":\"1989-01-01\",\"disabledIndicator\":false,\"disabilityTypeCodes\":[{\"code\":\"\"}],\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SSN\"},\"statusCode\":{\"code\":\"AppliedFor\"}}],\"tobaccoUserIndicator\":false,\"legalAddress\":{\"lineOne\":\"\",\"lineTwo\":\"5800 Windward Plaza\",\"lineThree\":\"5800 Windward Plaza\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\",\"deliveryPoint\":\"\"},\"otherPersonalAddresses\":[{\"lineOne\":\"5801 Windward Plaza\",\"lineTwo\":\"line2\",\"lineThree\":\"line3\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\"}],\"maritalStatusCode\":{\"code\":\"M\",\"effectiveDateTime\":\"2020-01-01\"},\"socialInsurancePrograms\":[{\"nameCode\":{\"code\":\"Medicare\",\"name\":\"Medicare\"},\"coveredIndicator\":false},{\"nameCode\":{\"code\":\"Medicaid\",\"name\":\"Medicaid\"},\"coveredIndicator\":false}],\"raceCode\":{\"code\":\"1\",\"identificationMethodCode\":{\"code\":\"SID\"}},\"ethnicityCode\":{\"code\":\"4\"},\"languageCode\":{\"code\":\"en_US\"},\"communication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"email@test.com\",\"notificationIndicator\":true}]}},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\",\"hireReasonCode\":{\"code\":\"NEW\"},\"workersCompensationCoverage\":{\"coverageStatus\":{\"code\":\"N\"},\"coverageTypeCode\":{\"code\":\"N\"},\"jobClassificationTypeCode\":{\"code\":\"CL\"},\"coverageClassTypeCode\":{\"code\":\"R\"}},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"001\"},\"addresses\":[{\"lineOne\":\"5800 Windward Plaza\",\"lineTwo\":\"5800 Windward Plaza\",\"lineThree\":\"5800 Windward Plaza\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\",\"deliveryPoint\":\"\"}],\"homeshoreIndicator\":false},\"job\":{\"jobCode\":{\"code\":\"AA\"},\"wageLawCoverages\":[{\"wageLawNameCode\":{\"code\":\"E\"}}],\"occupationalClassifications\":[{\"classificationCode\":{\"code\":\"2\"},\"classificationID\":{\"code\":\"\"}},{\"classificationCode\":{\"code\":\"SC\"},\"classificationID\":{\"code\":\"\"}}],\"industryClassifications\":[{\"classificationCode\":{\"code\":\"517910\"}}]},\"laborUnion\":{\"laborUnionCode\":{\"code\":\"\"}},\"bargainingUnit\":{\"bargainingUnitCode\":{\"code\":\"\"}},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"work@email.com\",\"notificationIndicator\":false}]},\"officerTypeCode\":{\"code\":\"EMP\"},\"benefitsEligibilityClassCode\":{\"code\":\"SLRY\"},\"managementPositionIndicator\":false,\"workerTypeCode\":{\"code\":\"F\"},\"reportsTo\":{\"positionID\":\"\"},\"acaBenefitEligibilityCode\":{\"code\":\"D\"},\"acaBenefitEligibilityDate\":\"2023-01-01\",\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"BusinessUnit\"},\"nameCode\":{\"code\":\"CORP\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\"},\"nameCode\":{\"code\":\"001101AA\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\"},\"nameCode\":{\"code\":\"101000\"}}],\"selfEmployedWorkerTypeCode\":{\"code\":\"1\"}},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\",\"payrollScheduleGroupCode\":\"1\",\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"8\"},\"payPeriodRateAmount\":{\"amount\":\"3000\"}},\"standardHours\":{\"hoursQuantity\":\"80\"},\"payCycleCode\":{\"code\":\"B\"},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":50}},{\"remunerationTypeCode\":{\"code\":\"Rate3Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate4Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate5Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate6Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate7Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate8Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate9Amount\"},\"remunerationRate\":{\"rate\":0}}],\"overtimeEligibilityIndicator\":false,\"tippedWorkerIndicator\":false,\"wageEntityCode\":{\"code\":\"AZ - FLAGST - FLAGSTAFF\"},\"customFieldGroup\":{\"stringFields\":[{\"nameCode\":{\"code\":\"CustomArea1\"},\"stringValue\":\"Area1\"},{\"nameCode\":{\"code\":\"CustomArea2\"},\"stringValue\":\"Area2\"},{\"nameCode\":{\"code\":\"CustomArea3\"},\"stringValue\":\"Area3\"},{\"nameCode\":{\"code\":\"CustomArea4\"},\"stringValue\":\"Area4\"}],\"codeFields\":[{\"nameCode\":{\"code\":\"DataControl\"},\"code\":\"\"},{\"nameCode\":{\"code\":\"Clock\"},\"code\":\"11111\"}]}},\"applicantTaxProfile\":{\"usFederalTaxInstruction\":{\"multipleJobIndicator\":false,\"federalIncomeTaxInstruction\":{\"taxFilingStatusCode\":{\"code\":\"D\"},\"taxAllowanceQuantity\":0,\"additionalIncomeAmount\":{\"amount\":0},\"taxAllowances\":[{\"allowanceTypeCode\":{\"code\":\"Deductions\"},\"taxAllowanceAmount\":{\"amount\":0}},{\"allowanceTypeCode\":{\"code\":\"Dependents\"},\"taxAllowanceAmount\":{\"amount\":0}}]}},\"usStateTaxInstructions\":{\"stateIncomeTaxInstructions\":[{\"workedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"NJ\"},\"taxFilingStatusCode\":{\"code\":\"S\"},\"taxAllowanceQuantity\":0},{\"livedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"KS\"}}],\"suiTaxInstruction\":{\"stateCode\":{\"code\":\"21\"},\"healthCoverageCode\":{\"code\":\"\"}}}}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "20. Hiring an employee completely for the US Client With SOC Code",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"14497_6706\",\"name\":\"HR + Payroll (System)\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"complete\",\"name\":\"\"}},\"workerID\":{\"id\":\"\"},\"employmentEligibilityOptionCode\":{\"code\":\"1\"},\"preHireIndicator\":false,\"employmentEligibilityProfile\":{\"employerOrganization\":{\"locationNameCode\":{\"code\":\"NA\"}}},\"onboardingExperienceCode\":{\"code\":\"default\"},\"applicantWorkerProfile\":{\"selfEmployedWorkerTypeCode\":{\"code\":\"1\"},\"hireDate\":\"2023-01-01\",\"hireReasonCode\":{\"code\":\"new\",\"name\":\"MYHIRE - My Hire\"},\"workersCompensationCoverage\":{\"coverageStatus\":{\"code\":\"\"},\"coverageTypeCode\":{\"code\":\"\"},\"jobClassificationTypeCode\":{\"code\":\"\"},\"coverageClassTypeCode\":{\"code\":\"\"}},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"AL\",\"name\":\"\"},\"addresses\":[{\"lineOne\":\"124 nepp\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"yonkers\",\"subdivisionCode\":{\"code\":\"NY\",\"name\":\"NY - New York\",\"subdivisionType\":\"\"},\"countryCode\":\"US\",\"postalCode\":\"12345\",\"subdivisionCode2\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"}}],\"homeshoreIndicator\":true},\"job\":{\"jobCode\":{\"code\":\"\",\"name\":\"\"},\"wageLawCoverages\":[{\"wageLawNameCode\":{\"code\":\"N\",\"name\":\"E - Exept\"}}],\"occupationalClassifications\":[{\"classificationCode\":{\"code\":\"6\"},\"classificationID\":{\"code\":\"EEOC\"}},{\"classificationCode\":{\"code\":\"\"},\"classificationID\":{\"code\":\"EEO\"}}],\"industryClassifications\":[{\"classificationCode\":{\"code\":\"\",\"name\":\"\"}}]},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543017\",\"extension\":\"324\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"945\",\"dialNumber\":\"7543016\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543017\",\"extension\":\"525\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543018\"}],\"emails\":[{\"emailUri\":\"\",\"notificationIndicator\":false}]},\"laborUnion\":{\"laborUnionCode\":{\"code\":\"UC\"}},\"bargainingUnit\":{\"bargainingUnitCode\":{\"code\":\"UL\",\"name\":\"\"}},\"officerTypeCode\":{\"code\":\"EMP\",\"name\":\"\"},\"payGradeCode\":{\"code\":\"PG1\",\"name\":\"\"},\"benefitsEligibilityClassCode\":{\"code\":\"\",\"name\":\"\"},\"managementPositionIndicator\":true,\"workerTypeCode\":{\"code\":\"f\",\"name\":\"\"},\"acaBenefitEligibilityCode\":{\"code\":\"D\",\"name\":\"D - Designate Full Time\"},\"acaBenefitEligibilityDate\":\"2019-11-18\",\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"LegalEntity\",\"name\":\"\"},\"nameCode\":{\"code\":\"527865434\",\"name\":\"NEW HIRE LEGAL ENTITY\"}},{\"unitTypeCode\":{\"code\":\"BusinessUnit\",\"name\":\"\"},\"nameCode\":{\"code\":\"\",\"name\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\",\"name\":\"\"},\"nameCode\":{\"code\":\"\",\"name\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\",\"name\":\"\"},\"nameCode\":{\"code\":\"\",\"name\":\"\"}}]},\"applicantPayrollProfile\":{\"payrollFileNumber\":\"034225\",\"overtimeEligibilityIndicator\":true,\"payrollGroupCode\":\"KKO\",\"standardHours\":{\"hoursQuantity\":\"86.67\",\"unitCode\":{\"code\":\"H\"},\"payCycleCode\":\"2\"},\"tippedWorkerIndicator\":true,\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"1\"},\"payPeriodRateAmount\":{\"amount\":\"100\"}},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":545}},{\"remunerationTypeCode\":{\"code\":\"Rate3Amount\"},\"remunerationRate\":{\"rate\":30}},{\"remunerationTypeCode\":{\"code\":\"Rate4Amount\"},\"remunerationRate\":{\"rate\":40}},{\"remunerationTypeCode\":{\"code\":\"Rate5Amount\"},\"remunerationRate\":{\"rate\":50}},{\"remunerationTypeCode\":{\"code\":\"Rate6Amount\"},\"remunerationRate\":{\"rate\":60}},{\"remunerationTypeCode\":{\"code\":\"Rate7Amount\"},\"remunerationRate\":{\"rate\":70}},{\"remunerationTypeCode\":{\"code\":\"Rate8Amount\"},\"remunerationRate\":{\"rate\":80}},{\"remunerationTypeCode\":{\"code\":\"Rate9Amount\"},\"remunerationRate\":{\"rate\":90}}],\"wageEntityCode\":{\"code\":\"\"},\"customFieldGroup\":{\"stringFields\":[{\"nameCode\":{\"code\":\"CustomArea1\"},\"stringValue\":\"dsfds\"},{\"nameCode\":{\"code\":\"CustomArea2\"},\"stringValue\":\"dfgdgjhklm\"},{\"nameCode\":{\"code\":\"CustomArea3\"},\"stringValue\":\"dfgdgjhklm\"},{\"nameCode\":{\"code\":\"CustomArea4\"},\"stringValue\":\"jadfdfds\"}],\"codeFields\":[{\"nameCode\":{\"code\":\"DataControl\"},\"code\":\"\"},{\"nameCode\":{\"code\":\"Clock\"},\"code\":\"\"}]},\"payrollScheduleGroupCode\":\"1\"},\"applicantPersonalProfile\":{\"preferredGenderPronounCode\":{\"code\":\"She/Her/Hers\",\"name\":\"He/Him/His\"},\"genderReportingDetails\":{\"reportedGenderCode\":{\"code\":\"M\"}},\"birthName\":{\"givenName\":\"workedInCountyAP\",\"middleName\":\"\",\"familyName\":\"Test2\"},\"legalName\":{\"salutations\":[{\"code\":\"Hon.\",\"name\":\"Hon. - Hon.\"}],\"generationAffix\":{\"code\":\"I\",\"name\":\"I - the first\"},\"qualificationAffix\":{\"code\":\"RN\",\"name\":\"RN - Registered Nurse\"}},\"genderCode\":{\"code\":\"F\",\"name\":\"F - Female\"},\"birthDate\":\"2000-04-04\",\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SSN\",\"name\":\"SSN - Social Security Number\"},\"statusCode\":{\"code\":\"AppliedFor\",\"name\":\"\",\"effectiveDateTime\":\"\"},\"expirationDate\":\"\"}],\"legalAddress\":{\"lineOne\":\"124 neppf\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"yonkers\",\"subdivisionCode\":{\"code\":\"NY\",\"name\":\"NY - New York\",\"subdivisionType\":\"\"},\"countryCode\":\"US\",\"postalCode\":\"10018\",\"subdivisionCode2\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"},\"deliveryPoint\":\"work mail stop\"},\"otherPersonalAddresses\":[{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\",\"subdivisionCode2\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"}}],\"languageCode\":{\"code\":\"en_US\",\"name\":\"en_US - English (US)\"},\"maritalStatusCode\":{\"code\":\"M\",\"name\":\"M - Married\",\"effectiveDateTime\":\"2015-06-06\"},\"tobaccoUserIndicator\":true,\"socialInsurancePrograms\":[{\"nameCode\":{\"code\":\"Medicare\",\"name\":\"Medicare\"},\"coveredIndicator\":true},{\"nameCode\":{\"code\":\"Medicaid\",\"name\":\"Medicaid\"},\"coveredIndicator\":true}],\"raceCode\":{\"code\":\"1\",\"name\":\"1 - White\",\"identificationMethodCode\":{\"code\":\"VID\",\"name\":\"VID - Visual ID\"}},\"ethnicityCode\":{\"code\":\"4\",\"name\":\"4 - Not Hispanic or Latino\"},\"communication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543011\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"945\",\"dialNumber\":\"7543017\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543013\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543017\",\"extension\":\"013\"}],\"emails\":[{\"emailUri\":\"sreekanth.random@adp.com\",\"notificationIndicator\":true}]},\"disabledIndicator\":true,\"disabilityTypeCodes\":[{\"code\":\"D\",\"name\":\"D - I\"}]},\"applicantTaxProfile\":{\"usFederalTaxInstruction\":{\"multipleJobIndicator\":true,\"federalIncomeTaxInstruction\":{\"taxFilingStatusCode\":{\"code\":\"D\"},\"taxWithholdingStatus\":{\"statusCode\":{\"code\":\"Exempt\"}},\"federalUnemploymentTaxInstruction\":{\"taxWithholdingStatus\":{\"statusCode\":{\"code\":\"\"}}},\"taxAllowanceQuantity\":20,\"additionalIncomeAmount\":{\"amount\":0},\"additionalTaxAmount\":{\"amount\":0},\"taxAllowances\":[{\"allowanceTypeCode\":{\"code\":\"Deductions\"},\"taxAllowanceAmount\":{\"amount\":0}},{\"allowanceTypeCode\":{\"code\":\"Dependents\"},\"taxAllowanceAmount\":{\"amount\":0}}]}},\"usStateTaxInstructions\":{\"stateIncomeTaxInstructions\":[{\"workedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"AL\"}},{\"livedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"NY\"},\"taxAllowanceQuantity\":4}],\"suiTaxInstruction\":{\"stateCode\":{\"code\":\"35\"},\"healthCoverageCode\":{\"code\":\"\"},\"taxReportingTypeCode\":{\"code\":\"\"}},\"socCode\":{\"code\":\"111011\"}},\"localTaxInstructions\":[{\"livedInJurisdictionIndicator\":true,\"localCode\":{\"code\":\"\"},\"taxAllowanceQuantity\":0},{\"workedInJurisdictionIndicator\":true,\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"PA_LST_Local_4\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"PA_LST_Local_5\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"NY_MTA_Local\"},\"localCode\":{\"code\":\"\"}}]}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04. Hiring an employee completely for the US Client - Full Payload",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9200525655723_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"complete\"}},\"onboardingExperienceCode\":{\"code\":\"default\"},\"employmentEligibilityOptionCode\":{\"code\":\"0\"},\"preHireIndicator\":true,\"employmentEligibilityProfile\":{\"employerOrganization\":{\"locationNameCode\":{\"code\":\"2554683735_1\"}}},\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Tom\",\"middleName\":\"M\",\"familyName\":\"Taylor\"},\"legalName\":{\"givenName\":\"Tom\",\"familyName\":\"Taylor\",\"salutations\":[{\"code\":\"Mr.\"}],\"generationAffix\":{\"code\":\"2nd\"},\"qualificationAffix\":{\"code\":\"MD\"}},\"preferredGenderPronounCode\":{\"code\":\"He/Him/His\"},\"preferredName\":{\"nickName\":\"Nick\"},\"genderCode\":{\"code\":\"M\"},\"genderReportingDetails\":{\"reportedGenderCode\":{\"code\":\"M\"}},\"birthDate\":\"1989-01-01\",\"disabledIndicator\":false,\"disabilityTypeCodes\":[{\"code\":\"\"}],\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SSN\"},\"statusCode\":{\"code\":\"AppliedFor\"}}],\"tobaccoUserIndicator\":false,\"legalAddress\":{\"lineOne\":\"5800 Windward Plaza\",\"lineTwo\":\"5800 Windward Plaza\",\"lineThree\":\"5800 Windward Plaza\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\",\"deliveryPoint\":\"\"},\"otherPersonalAddresses\":[{\"lineOne\":\"5801 Windward Plaza\",\"lineTwo\":\"line2\",\"lineThree\":\"line3\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\"}],\"maritalStatusCode\":{\"code\":\"M\",\"effectiveDateTime\":\"2020-01-01\"},\"socialInsurancePrograms\":[{\"nameCode\":{\"code\":\"Medicare\",\"name\":\"Medicare\"},\"coveredIndicator\":false},{\"nameCode\":{\"code\":\"Medicaid\",\"name\":\"Medicaid\"},\"coveredIndicator\":false}],\"raceCode\":{\"code\":\"1\",\"identificationMethodCode\":{\"code\":\"SID\"}},\"ethnicityCode\":{\"code\":\"4\"},\"languageCode\":{\"code\":\"en_US\"},\"communication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"email@test.com\",\"notificationIndicator\":true}]}},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\",\"hireReasonCode\":{\"code\":\"NEW\"},\"workersCompensationCoverage\":{\"coverageStatus\":{\"code\":\"N\"},\"coverageTypeCode\":{\"code\":\"N\"},\"jobClassificationTypeCode\":{\"code\":\"CL\"},\"coverageClassTypeCode\":{\"code\":\"R\"}},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"001\"},\"addresses\":[{\"lineOne\":\"5800 Windward Plaza\",\"lineTwo\":\"5800 Windward Plaza\",\"lineThree\":\"5800 Windward Plaza\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\",\"deliveryPoint\":\"\"}],\"homeshoreIndicator\":false},\"job\":{\"jobCode\":{\"code\":\"AA\"},\"wageLawCoverages\":[{\"wageLawNameCode\":{\"code\":\"E\"}}],\"occupationalClassifications\":[{\"classificationCode\":{\"code\":\"2\"},\"classificationID\":{\"code\":\"\"}},{\"classificationCode\":{\"code\":\"SC\"},\"classificationID\":{\"code\":\"\"}}],\"industryClassifications\":[{\"classificationCode\":{\"code\":\"517910\"}}]},\"laborUnion\":{\"laborUnionCode\":{\"code\":\"\"}},\"bargainingUnit\":{\"bargainingUnitCode\":{\"code\":\"\"}},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"work@email.com\",\"notificationIndicator\":false}]},\"officerTypeCode\":{\"code\":\"EMP\"},\"benefitsEligibilityClassCode\":{\"code\":\"SLRY\"},\"managementPositionIndicator\":false,\"workerTypeCode\":{\"code\":\"F\"},\"reportsTo\":{\"positionID\":\"\"},\"acaBenefitEligibilityCode\":{\"code\":\"D\"},\"acaBenefitEligibilityDate\":\"2023-01-01\",\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"BusinessUnit\"},\"nameCode\":{\"code\":\"CORP\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\"},\"nameCode\":{\"code\":\"001101AA\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\"},\"nameCode\":{\"code\":\"101000\"}}],\"selfEmployedWorkerTypeCode\":{\"code\":\"1\"}},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\",\"payrollFileNumber\":\"{{payrollFileNumber}}\",\"payrollScheduleGroupCode\":\"1\",\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"8\"},\"payPeriodRateAmount\":{\"amount\":\"3000\"}},\"standardHours\":{\"hoursQuantity\":\"80\"},\"payCycleCode\":{\"code\":\"B\"},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":50}},{\"remunerationTypeCode\":{\"code\":\"Rate3Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate4Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate5Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate6Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate7Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate8Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate9Amount\"},\"remunerationRate\":{\"rate\":0}}],\"overtimeEligibilityIndicator\":false,\"tippedWorkerIndicator\":false,\"wageEntityCode\":{\"code\":\"AZ - FLAGST - FLAGSTAFF\"},\"customFieldGroup\":{\"stringFields\":[{\"nameCode\":{\"code\":\"CustomArea1\"},\"stringValue\":\"Area1\"},{\"nameCode\":{\"code\":\"CustomArea2\"},\"stringValue\":\"Area2\"},{\"nameCode\":{\"code\":\"CustomArea3\"},\"stringValue\":\"Area3\"},{\"nameCode\":{\"code\":\"CustomArea4\"},\"stringValue\":\"Area4\"}],\"codeFields\":[{\"nameCode\":{\"code\":\"DataControl\"},\"code\":\"\"},{\"nameCode\":{\"code\":\"Clock\"},\"code\":\"11111\"}]}},\"applicantTaxProfile\":{\"usFederalTaxInstruction\":{\"multipleJobIndicator\":false,\"federalIncomeTaxInstruction\":{\"taxFilingStatusCode\":{\"code\":\"D\"},\"taxAllowanceQuantity\":0,\"additionalIncomeAmount\":{\"amount\":0},\"taxAllowances\":[{\"allowanceTypeCode\":{\"code\":\"Deductions\"},\"taxAllowanceAmount\":{\"amount\":0}},{\"allowanceTypeCode\":{\"code\":\"Dependents\"},\"taxAllowanceAmount\":{\"amount\":0}}]}},\"usStateTaxInstructions\":{\"stateIncomeTaxInstructions\":[{\"workedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"NJ\"},\"taxFilingStatusCode\":{\"code\":\"S\"},\"taxAllowanceQuantity\":0},{\"livedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"KS\"}}],\"suiTaxInstruction\":{\"stateCode\":{\"code\":\"21\"},\"healthCoverageCode\":{\"code\":\"\"}}}}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Hiring an employee completely for the US Client with Ohio(OH) School District- Full Payload",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9200525655723_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"complete\"}},\"onboardingExperienceCode\":{\"code\":\"default\"},\"employmentEligibilityOptionCode\":{\"code\":\"0\"},\"preHireIndicator\":false,\"employmentEligibilityProfile\":{\"employerOrganization\":{\"locationNameCode\":{\"code\":\"2554683735_1\"}}},\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"testWI4\",\"middleName\":\"The\",\"familyName\":\"scenario\"},\"legalName\":{\"givenName\":\"testWI4\",\"familyName\":\"The\",\"salutations\":[{\"code\":\"Mr.\"}],\"generationAffix\":{\"code\":\"2nd\"},\"qualificationAffix\":{\"code\":\"MD\"}},\"preferredGenderPronounCode\":{\"code\":\"He/Him/His\"},\"preferredName\":{\"nickName\":\"school\"},\"genderCode\":{\"code\":\"M\"},\"birthDate\":\"1980-01-01\",\"disabledIndicator\":false,\"disabilityTypeCodes\":[{\"code\":\"\"}],\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SSN\"},\"statusCode\":{\"code\":\"AppliedFor\"}}],\"tobaccoUserIndicator\":false,\"legalAddress\":{\"lineOne\":\"5800 Windward Plaza\",\"lineTwo\":\"5800 Windward Plaza\",\"lineThree\":\"5800 Windward Plaza\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\",\"deliveryPoint\":\"\"},\"otherPersonalAddresses\":[{\"lineOne\":\"5801 Windward Plaza\",\"lineTwo\":\"line2\",\"lineThree\":\"line3\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\"}],\"maritalStatusCode\":{\"code\":\"M\",\"effectiveDateTime\":\"2020-01-01\"},\"socialInsurancePrograms\":[{\"nameCode\":{\"code\":\"Medicare\",\"name\":\"Medicare\"},\"coveredIndicator\":false},{\"nameCode\":{\"code\":\"Medicaid\",\"name\":\"Medicaid\"},\"coveredIndicator\":false}],\"raceCode\":{\"code\":\"1\",\"identificationMethodCode\":{\"code\":\"SID\"}},\"ethnicityCode\":{\"code\":\"4\"},\"languageCode\":{\"code\":\"en_US\"},\"communication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"email@test.com\",\"notificationIndicator\":true}]}},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\",\"hireReasonCode\":{\"code\":\"CURR\"},\"workersCompensationCoverage\":{\"coverageStatus\":{\"code\":\"N\"},\"coverageTypeCode\":{\"code\":\"N\"},\"jobClassificationTypeCode\":{\"code\":\"CM\"},\"coverageClassTypeCode\":{\"code\":\"R\"}},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"001\"},\"addresses\":[{\"lineOne\":\"5800 Windward Plaza\",\"lineTwo\":\"5800 Windward Plaza\",\"lineThree\":\"5800 Windward Plaza\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\",\"deliveryPoint\":\"\"}],\"homeshoreIndicator\":false},\"job\":{\"jobCode\":{\"code\":\"AA\"},\"wageLawCoverages\":[{\"wageLawNameCode\":{\"code\":\"E\"}}],\"occupationalClassifications\":[{\"classificationCode\":{\"code\":\"2\"},\"classificationID\":{\"code\":\"EEOC\"}},{\"classificationCode\":{\"code\":\"CORP\"},\"classificationID\":{\"code\":\"EEO\"}}],\"industryClassifications\":[{\"classificationCode\":{\"code\":\"517910\"}}]},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"work@email.com\",\"notificationIndicator\":false}]},\"officerTypeCode\":{\"code\":\"EMP\"},\"benefitsEligibilityClassCode\":{\"code\":\"SLRY\"},\"managementPositionIndicator\":false,\"workerTypeCode\":{\"code\":\"F\"},\"reportsTo\":{\"positionID\":\"\"},\"acaBenefitEligibilityCode\":{\"code\":\"D\"},\"acaBenefitEligibilityDate\":\"2023-01-01\",\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"BusinessUnit\"},\"nameCode\":{\"code\":\"CORP\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\"},\"nameCode\":{\"code\":\"001101AA\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\"},\"nameCode\":{\"code\":\"101000\"}}],\"selfEmployedWorkerTypeCode\":{\"code\":\"1\"}},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\",\"payrollScheduleGroupCode\":\"1\",\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"8\"},\"payPeriodRateAmount\":{\"amount\":\"3000\"}},\"standardHours\":{\"hoursQuantity\":\"80\"},\"payCycleCode\":{\"code\":\"B\"},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":50}},{\"remunerationTypeCode\":{\"code\":\"Rate3Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate4Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate5Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate6Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate7Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate8Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate9Amount\"},\"remunerationRate\":{\"rate\":0}}],\"overtimeEligibilityIndicator\":false,\"tippedWorkerIndicator\":false,\"wageEntityCode\":{\"code\":\"AZ - FLAGST - FLAGSTAFF\"},\"customFieldGroup\":{\"stringFields\":[{\"nameCode\":{\"code\":\"CustomArea1\"},\"stringValue\":\"Area1\"},{\"nameCode\":{\"code\":\"CustomArea2\"},\"stringValue\":\"Area2\"},{\"nameCode\":{\"code\":\"CustomArea3\"},\"stringValue\":\"Area3\"},{\"nameCode\":{\"code\":\"CustomArea4\"},\"stringValue\":\"Area4\"}],\"codeFields\":[{\"nameCode\":{\"code\":\"DataControl\"},\"code\":\"\"},{\"nameCode\":{\"code\":\"Clock\"},\"code\":\"11111\"}]}},\"applicantTaxProfile\":{\"usFederalTaxInstruction\":{\"multipleJobIndicator\":false,\"federalIncomeTaxInstruction\":{\"taxFilingStatusCode\":{\"code\":\"D\"},\"taxAllowanceQuantity\":0,\"additionalIncomeAmount\":{\"amount\":0},\"taxAllowances\":[{\"allowanceTypeCode\":{\"code\":\"Deductions\"},\"taxAllowanceAmount\":{\"amount\":0}},{\"allowanceTypeCode\":{\"code\":\"Dependents\"},\"taxAllowanceAmount\":{\"amount\":0}}]}},\"usStateTaxInstructions\":{\"stateIncomeTaxInstructions\":[{\"workedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"GA\"},\"taxFilingStatusCode\":{\"code\":\"S\"},\"taxAllowanceQuantity\":0},{\"livedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"OH\"}}],\"suiTaxInstruction\":{\"stateCode\":{\"code\":\"30\"},\"healthCoverageCode\":{\"code\":\"\"}}},\"localTaxInstructions\":[{\"livedInJurisdictionIndicator\":true,\"localCode\":{\"code\":\"\"},\"taxAllowanceQuantity\":null},{\"workedInJurisdictionIndicator\":true,\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"PA_LST_Local_4\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"PA_LST_Local_5\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"NY_MTA_Local\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"OH_SchoolDistrict\",\"name\":\"OH_SchoolDistrict\"},\"localCode\":{\"code\":\"3902\",\"name\":\"Ohion SD 3902\"}}]}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12. Prehire an employee for the US Client(InProgress)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9200525655723_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"inprogress\"}},\"onboardingExperienceCode\":{\"code\":\"default\"},\"employmentEligibilityOptionCode\":{\"code\":\"0\"},\"preHireIndicator\":true,\"employmentEligibilityProfile\":{\"employerOrganization\":{\"locationNameCode\":{\"code\":\"2554683735_1\"}}},\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Tom\",\"middleName\":\"M\",\"familyName\":\"Taylor\"},\"legalName\":{\"givenName\":\"Tom\",\"familyName\":\"Taylor\",\"salutations\":[{\"code\":\"Mr.\"}],\"generationAffix\":{\"code\":\"2nd\"},\"qualificationAffix\":{\"code\":\"MD\"}},\"preferredGenderPronounCode\":{\"code\":\"He/Him/His\"},\"preferredName\":{\"nickName\":\"Nick\"},\"genderCode\":{\"code\":\"M\"},\"genderReportingDetails\":{\"reportedGenderCode\":{\"code\":\"M\"}},\"birthDate\":\"1989-01-01\",\"disabledIndicator\":false,\"disabilityTypeCodes\":[{\"code\":\"\"}],\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SSN\"},\"statusCode\":{\"code\":\"AppliedFor\"}}],\"tobaccoUserIndicator\":false,\"legalAddress\":{\"lineOne\":\"5800 Windward Plaza\",\"lineTwo\":\"5800 Windward Plaza\",\"lineThree\":\"5800 Windward Plaza\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\",\"deliveryPoint\":\"\"},\"otherPersonalAddresses\":[{\"lineOne\":\"5801 Windward Plaza\",\"lineTwo\":\"line2\",\"lineThree\":\"line3\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\"}],\"maritalStatusCode\":{\"code\":\"M\",\"effectiveDateTime\":\"2020-01-01\"},\"socialInsurancePrograms\":[{\"nameCode\":{\"code\":\"Medicare\",\"name\":\"Medicare\"},\"coveredIndicator\":false},{\"nameCode\":{\"code\":\"Medicaid\",\"name\":\"Medicaid\"},\"coveredIndicator\":false}],\"raceCode\":{\"code\":\"1\",\"identificationMethodCode\":{\"code\":\"SID\"}},\"ethnicityCode\":{\"code\":\"4\"},\"languageCode\":{\"code\":\"en_US\"},\"communication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"email@test.com\",\"notificationIndicator\":true}]}},\"applicantWorkerProfile\":{\"hireDate\":\"2000-01-09\",\"hireReasonCode\":{\"code\":\"NEW\"},\"workersCompensationCoverage\":{\"coverageStatus\":{\"code\":\"N\"},\"coverageTypeCode\":{\"code\":\"N\"},\"jobClassificationTypeCode\":{\"code\":\"CL\"},\"coverageClassTypeCode\":{\"code\":\"R\"}},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"001\"},\"addresses\":[{\"lineOne\":\"5800 Windward Plaza\",\"lineTwo\":\"5800 Windward Plaza\",\"lineThree\":\"5800 Windward Plaza\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\",\"deliveryPoint\":\"\"}],\"homeshoreIndicator\":false},\"job\":{\"jobCode\":{\"code\":\"AA\"},\"wageLawCoverages\":[{\"wageLawNameCode\":{\"code\":\"E\"}}],\"occupationalClassifications\":[{\"classificationCode\":{\"code\":\"2\"},\"classificationID\":{\"code\":\"\"}},{\"classificationCode\":{\"code\":\"SC\"},\"classificationID\":{\"code\":\"\"}}],\"industryClassifications\":[{\"classificationCode\":{\"code\":\"517910\"}}]},\"laborUnion\":{\"laborUnionCode\":{\"code\":\"\"}},\"bargainingUnit\":{\"bargainingUnitCode\":{\"code\":\"\"}},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"work@email.com\",\"notificationIndicator\":false}]},\"officerTypeCode\":{\"code\":\"EMP\"},\"benefitsEligibilityClassCode\":{\"code\":\"SLRY\"},\"managementPositionIndicator\":false,\"workerTypeCode\":{\"code\":\"F\"},\"reportsTo\":{\"positionID\":\"\"},\"acaBenefitEligibilityCode\":{\"code\":\"D\"},\"acaBenefitEligibilityDate\":\"2023-01-01\",\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"BusinessUnit\"},\"nameCode\":{\"code\":\"CORP\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\"},\"nameCode\":{\"code\":\"001101AA\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\"},\"nameCode\":{\"code\":\"101000\"}}],\"selfEmployedWorkerTypeCode\":{\"code\":\"1\"}},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\",\"payrollScheduleGroupCode\":\"1\",\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"8\"},\"payPeriodRateAmount\":{\"amount\":\"3000\"}},\"standardHours\":{\"hoursQuantity\":\"80\"},\"payCycleCode\":{\"code\":\"B\"},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":50}},{\"remunerationTypeCode\":{\"code\":\"Rate3Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate4Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate5Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate6Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate7Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate8Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate9Amount\"},\"remunerationRate\":{\"rate\":0}}],\"overtimeEligibilityIndicator\":false,\"tippedWorkerIndicator\":false,\"wageEntityCode\":{\"code\":\"AZ - FLAGST - FLAGSTAFF\"},\"customFieldGroup\":{\"stringFields\":[{\"nameCode\":{\"code\":\"CustomArea1\"},\"stringValue\":\"Area1\"},{\"nameCode\":{\"code\":\"CustomArea2\"},\"stringValue\":\"Area2\"},{\"nameCode\":{\"code\":\"CustomArea3\"},\"stringValue\":\"Area3\"},{\"nameCode\":{\"code\":\"CustomArea4\"},\"stringValue\":\"Area4\"}],\"codeFields\":[{\"nameCode\":{\"code\":\"DataControl\"},\"code\":\"\"},{\"nameCode\":{\"code\":\"Clock\"},\"code\":\"11111\"}]}},\"applicantTaxProfile\":{\"usFederalTaxInstruction\":{\"multipleJobIndicator\":false,\"federalIncomeTaxInstruction\":{\"taxFilingStatusCode\":{\"code\":\"D\"},\"taxAllowanceQuantity\":0,\"additionalIncomeAmount\":{\"amount\":0},\"taxAllowances\":[{\"allowanceTypeCode\":{\"code\":\"Deductions\"},\"taxAllowanceAmount\":{\"amount\":0}},{\"allowanceTypeCode\":{\"code\":\"Dependents\"},\"taxAllowanceAmount\":{\"amount\":0}}]}},\"usStateTaxInstructions\":{\"stateIncomeTaxInstructions\":[{\"workedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"NJ\"},\"taxFilingStatusCode\":{\"code\":\"S\"},\"taxAllowanceQuantity\":0},{\"livedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"KS\"}}],\"suiTaxInstruction\":{\"stateCode\":{\"code\":\"21\"},\"healthCoverageCode\":{\"code\":\"\"}}}}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06. Hiring an employee completely for the International Client - Full Payload",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9360972_1439\"},\"countryCode\":\"GB\",\"onboardingStatus\":{\"statusCode\":{\"code\":\"complete\"}},\"onboardingExperienceCode\":{\"code\":\"default_un\"},\"preHireIndicator\":false,\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Test\",\"middleName\":\"The\",\"familyName\":\"Hire\"},\"legalName\":{\"salutations\":[{\"code\":\"Mr.\"}],\"generationAffix\":{\"code\":\"2nd\"},\"qualificationAffix\":{\"code\":\"MD\"}},\"preferredName\":{\"nickName\":\"Testy\"},\"genderCode\":{\"code\":\"M\"},\"birthDate\":\"1980-01-01\",\"governmentIDs\":[{\"id\":\"QQ123458C\",\"nameCode\":{\"code\":\"UK National Insurance Number\"}}],\"legalAddress\":{\"lineOne\":\"Great Russell St\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"London\",\"subdivisionCode\":{\"codeValue\":\"London, City of\"},\"countryCode\":\"GB\",\"postalCode\":\"WC1B 3DG\",\"deliveryPoint\":\"\"},\"otherPersonalAddresses\":[{\"lineOne\":\"5801 Windward Plaza\",\"lineTwo\":\"line2\",\"lineThree\":\"line3\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\"}],\"communication\":{\"landlines\":[{\"countryDialing\":\"91\",\"areaDialing\":\"94935\",\"dialNumber\":\"66384\",\"extension\":\"324\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"email@test.com\",\"notificationIndicator\":true}]},\"maritalStatusCode\":{\"code\":\"M\",\"effectiveDateTime\":\"2020-01-01\"}},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\",\"hireReasonCode\":{\"code\":\"CURR\"},\"job\":{\"jobCode\":{\"code\":\"AA\"}},\"payGradeCode\":{\"code\":\"AXA\"},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"TEST\"},\"addresses\":[{\"lineOne\":\"5800 Windward Plaza\",\"lineTwo\":\"5800 Windward Plaza\",\"lineThree\":\"5800 Windward Plaza\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\",\"deliveryPoint\":\"\"}],\"homeshoreIndicator\":false},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"work@email.com\",\"notificationIndicator\":false}]},\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"BusinessUnit\"},\"nameCode\":{\"code\":\"CORP\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\"},\"nameCode\":{\"code\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\"},\"nameCode\":{\"code\":\"INT\"}}],\"officerTypeCode\":{\"code\":\"EMP\"},\"workerTypeCode\":{\"code\":\"F\"}},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\",\"payrollScheduleGroupCode\":\"\",\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"8\"},\"payPeriodRateAmount\":{\"amount\":\"3000\"}},\"standardHours\":{\"hoursQuantity\":\"80\"},\"payCycleCode\":{\"code\":\"B\"},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":50}}]}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "01. Starts the applicant onboarding process (Inprogress state) for US Client - Minimal payload",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9200525655723_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"inprogress\"}},\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Bear\",\"familyName\":\"Grill\"},\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SSN\"},\"statusCode\":{\"code\":\"AppliedFor\"}}]},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\"},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\"},\"applicantTaxProfile\":{}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19. Hiring an employee completely for the US Client with Indiana - Full Payload",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"14497_6706\",\"name\":\"HR + Payroll (System)\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"complete\",\"name\":\"\"}},\"workerID\":{\"id\":\"\"},\"employmentEligibilityOptionCode\":{\"code\":\"1\"},\"preHireIndicator\":false,\"employmentEligibilityProfile\":{\"employerOrganization\":{\"locationNameCode\":{\"code\":\"NA\"}}},\"onboardingExperienceCode\":{\"code\":\"default\"},\"applicantWorkerProfile\":{\"selfEmployedWorkerTypeCode\":{\"code\":\"1\"},\"hireDate\":\"2023-01-01\",\"hireReasonCode\":{\"code\":\"new\",\"name\":\"MYHIRE - My Hire\"},\"workersCompensationCoverage\":{\"coverageStatus\":{\"code\":\"\"},\"coverageTypeCode\":{\"code\":\"\"},\"jobClassificationTypeCode\":{\"code\":\"\"},\"coverageClassTypeCode\":{\"code\":\"\"}},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"AL\",\"name\":\"\"},\"addresses\":[{\"lineOne\":\"124 nepp\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"yonkers\",\"subdivisionCode\":{\"code\":\"NY\",\"name\":\"NY - New York\",\"subdivisionType\":\"\"},\"countryCode\":\"US\",\"postalCode\":\"12345\",\"subdivisionCode2\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"}}],\"homeshoreIndicator\":true},\"job\":{\"jobCode\":{\"code\":\"\",\"name\":\"\"},\"wageLawCoverages\":[{\"wageLawNameCode\":{\"code\":\"N\",\"name\":\"E - Exept\"}}],\"occupationalClassifications\":[{\"classificationCode\":{\"code\":\"6\"},\"classificationID\":{\"code\":\"EEOC\"}},{\"classificationCode\":{\"code\":\"\"},\"classificationID\":{\"code\":\"EEO\"}}],\"industryClassifications\":[{\"classificationCode\":{\"code\":\"\",\"name\":\"\"}}]},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543017\",\"extension\":\"324\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"945\",\"dialNumber\":\"7543016\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543017\",\"extension\":\"525\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543018\"}],\"emails\":[{\"emailUri\":\"\",\"notificationIndicator\":false}]},\"laborUnion\":{\"laborUnionCode\":{\"code\":\"UC\"}},\"bargainingUnit\":{\"bargainingUnitCode\":{\"code\":\"UL\",\"name\":\"\"}},\"officerTypeCode\":{\"code\":\"EMP\",\"name\":\"\"},\"payGradeCode\":{\"code\":\"PG1\",\"name\":\"\"},\"benefitsEligibilityClassCode\":{\"code\":\"\",\"name\":\"\"},\"managementPositionIndicator\":true,\"workerTypeCode\":{\"code\":\"f\",\"name\":\"\"},\"acaBenefitEligibilityCode\":{\"code\":\"D\",\"name\":\"D - Designate Full Time\"},\"acaBenefitEligibilityDate\":\"2019-11-18\",\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"LegalEntity\",\"name\":\"\"},\"nameCode\":{\"code\":\"527865434\",\"name\":\"NEW HIRE LEGAL ENTITY\"}},{\"unitTypeCode\":{\"code\":\"BusinessUnit\",\"name\":\"\"},\"nameCode\":{\"code\":\"\",\"name\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\",\"name\":\"\"},\"nameCode\":{\"code\":\"\",\"name\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\",\"name\":\"\"},\"nameCode\":{\"code\":\"\",\"name\":\"\"}}]},\"applicantPayrollProfile\":{\"payrollFileNumber\":\"034225\",\"overtimeEligibilityIndicator\":true,\"payrollGroupCode\":\"KKO\",\"standardHours\":{\"hoursQuantity\":\"86.67\",\"unitCode\":{\"code\":\"H\"},\"payCycleCode\":\"2\"},\"tippedWorkerIndicator\":true,\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"1\"},\"payPeriodRateAmount\":{\"amount\":\"100\"}},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":545}},{\"remunerationTypeCode\":{\"code\":\"Rate3Amount\"},\"remunerationRate\":{\"rate\":30}},{\"remunerationTypeCode\":{\"code\":\"Rate4Amount\"},\"remunerationRate\":{\"rate\":40}},{\"remunerationTypeCode\":{\"code\":\"Rate5Amount\"},\"remunerationRate\":{\"rate\":50}},{\"remunerationTypeCode\":{\"code\":\"Rate6Amount\"},\"remunerationRate\":{\"rate\":60}},{\"remunerationTypeCode\":{\"code\":\"Rate7Amount\"},\"remunerationRate\":{\"rate\":70}},{\"remunerationTypeCode\":{\"code\":\"Rate8Amount\"},\"remunerationRate\":{\"rate\":80}},{\"remunerationTypeCode\":{\"code\":\"Rate9Amount\"},\"remunerationRate\":{\"rate\":90}}],\"wageEntityCode\":{\"code\":\"\"},\"customFieldGroup\":{\"stringFields\":[{\"nameCode\":{\"code\":\"CustomArea1\"},\"stringValue\":\"dsfds\"},{\"nameCode\":{\"code\":\"CustomArea2\"},\"stringValue\":\"dfgdgjhklm\"},{\"nameCode\":{\"code\":\"CustomArea3\"},\"stringValue\":\"dfgdgjhklm\"},{\"nameCode\":{\"code\":\"CustomArea4\"},\"stringValue\":\"jadfdfds\"}],\"codeFields\":[{\"nameCode\":{\"code\":\"DataControl\"},\"code\":\"\"},{\"nameCode\":{\"code\":\"Clock\"},\"code\":\"\"}]},\"payrollScheduleGroupCode\":\"1\"},\"applicantPersonalProfile\":{\"preferredGenderPronounCode\":{\"code\":\"She/Her/Hers\",\"name\":\"He/Him/His\"},\"genderReportingDetails\":{\"reportedGenderCode\":{\"code\":\"M\"}},\"birthName\":{\"givenName\":\"workedInCountyAP\",\"middleName\":\"\",\"familyName\":\"Test2\"},\"legalName\":{\"salutations\":[{\"code\":\"Hon.\",\"name\":\"Hon. - Hon.\"}],\"generationAffix\":{\"code\":\"I\",\"name\":\"I - the first\"},\"qualificationAffix\":{\"code\":\"RN\",\"name\":\"RN - Registered Nurse\"}},\"genderCode\":{\"code\":\"F\",\"name\":\"F - Female\"},\"birthDate\":\"2000-04-04\",\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SSN\",\"name\":\"SSN - Social Security Number\"},\"statusCode\":{\"code\":\"AppliedFor\",\"name\":\"\",\"effectiveDateTime\":\"\"},\"expirationDate\":\"\"}],\"legalAddress\":{\"lineOne\":\"124 neppf\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"yonkers\",\"subdivisionCode\":{\"code\":\"NY\",\"name\":\"NY - New York\",\"subdivisionType\":\"\"},\"countryCode\":\"US\",\"postalCode\":\"10018\",\"subdivisionCode2\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"},\"deliveryPoint\":\"work mail stop\"},\"otherPersonalAddresses\":[{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\",\"subdivisionCode2\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"}}],\"languageCode\":{\"code\":\"en_US\",\"name\":\"en_US - English (US)\"},\"maritalStatusCode\":{\"code\":\"M\",\"name\":\"M - Married\",\"effectiveDateTime\":\"2015-06-06\"},\"tobaccoUserIndicator\":true,\"socialInsurancePrograms\":[{\"nameCode\":{\"code\":\"Medicare\",\"name\":\"Medicare\"},\"coveredIndicator\":true},{\"nameCode\":{\"code\":\"Medicaid\",\"name\":\"Medicaid\"},\"coveredIndicator\":true}],\"raceCode\":{\"code\":\"1\",\"name\":\"1 - White\",\"identificationMethodCode\":{\"code\":\"VID\",\"name\":\"VID - Visual ID\"}},\"ethnicityCode\":{\"code\":\"4\",\"name\":\"4 - Not Hispanic or Latino\"},\"communication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543011\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"945\",\"dialNumber\":\"7543017\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543013\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543017\",\"extension\":\"013\"}],\"emails\":[{\"emailUri\":\"sreekanth.random@adp.com\",\"notificationIndicator\":true}]},\"disabledIndicator\":true,\"disabilityTypeCodes\":[{\"code\":\"D\",\"name\":\"D - I\"}]},\"applicantTaxProfile\":{\"usFederalTaxInstruction\":{\"multipleJobIndicator\":true,\"federalIncomeTaxInstruction\":{\"taxFilingStatusCode\":{\"code\":\"D\"},\"taxWithholdingStatus\":{\"statusCode\":{\"code\":\"Exempt\"}},\"federalUnemploymentTaxInstruction\":{\"taxWithholdingStatus\":{\"statusCode\":{\"code\":\"\"}}},\"taxAllowanceQuantity\":20,\"additionalIncomeAmount\":{\"amount\":0},\"additionalTaxAmount\":{\"amount\":0},\"taxAllowances\":[{\"allowanceTypeCode\":{\"code\":\"Deductions\"},\"taxAllowanceAmount\":{\"amount\":0}},{\"allowanceTypeCode\":{\"code\":\"Dependents\"},\"taxAllowanceAmount\":{\"amount\":0}}]}},\"usStateTaxInstructions\":{\"stateIncomeTaxInstructions\":[{\"workedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"IN\"}},{\"livedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"NY\"},\"taxAllowanceQuantity\":4}],\"suiTaxInstruction\":{\"stateCode\":{\"code\":\"26\"},\"healthCoverageCode\":{\"code\":\"\"},\"taxReportingTypeCode\":{\"code\":\"\"}},\"socCode\":{\"code\":\"111011\"},\"jobTitleForCompReporting\":\"comp reporting job title\"},\"localTaxInstructions\":[{\"livedInJurisdictionIndicator\":true,\"localCode\":{\"code\":\"\"},\"taxAllowanceQuantity\":0},{\"workedInJurisdictionIndicator\":true,\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"PA_LST_Local_4\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"PA_LST_Local_5\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"NY_MTA_Local\"},\"localCode\":{\"code\":\"\"}}]}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03. Starts the applicant onboarding process (Inprogress state) for International Client - Minimal Payload",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9201031817993_1\"},\"countryCode\":\"FR\",\"onboardingStatus\":{\"statusCode\":{\"code\":\"inprogress\"}},\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Test\",\"middleName\":\"The\",\"familyName\":\"Hire\"}},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\"}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02. Starts the applicant onboarding process (Inprogress state) for CANADA Client - Minimal Payload",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9203338607711_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"inprogress\"}},\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Canada\",\"familyName\":\"Test\"}},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\"},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\"},\"applicantTaxProfile\":{}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05. Hiring an employee completely for the CANADA Client - Full Payload",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9203338607711_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"complete\"}},\"onboardingExperienceCode\":{\"code\":\"default_ca\"},\"employmentEligibilityOptionCode\":{\"code\":\"0\"},\"workerID\":{\"id\":\"\"},\"preHireIndicator\":false,\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Test\",\"middleName\":\"The\",\"familyName\":\"Hire\"},\"legalName\":{\"givenName\":\"Test\",\"familyName\":\"The\",\"salutations\":[{\"code\":\"Mr.\"}],\"generationAffix\":{\"code\":\"2nd\"},\"qualificationAffix\":{\"code\":\"MD\"}},\"preferredName\":{\"nickName\":\"Testy\"},\"genderCode\":{\"code\":\"M\"},\"birthDate\":\"1980-01-01\",\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SIN\"},\"statusCode\":{\"code\":\"NotProvided\"}}],\"tobaccoUserIndicator\":false,\"legalAddress\":{\"lineOne\":\"1380 Sherbrooke St W\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"Montreal\",\"subdivisionCode\":{\"code\":\"QC\"},\"subdivisionCode2\":{\"code\":\"\"},\"countryCode\":\"CA\",\"postalCode\":\"H3G 1J5\",\"deliveryPoint\":\"\"},\"otherPersonalAddresses\":[{\"lineOne\":\"1381 Sherbrooke St W\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"Montreal\",\"subdivisionCode\":{\"code\":\"QC\"},\"subdivisionCode2\":{\"code\":\"\"},\"countryCode\":\"CA\",\"postalCode\":\"H3G 1J5\",\"deliveryPoint\":\"\"}],\"maritalStatusCode\":{\"code\":\"M\",\"effectiveDateTime\":\"2020-01-01\"},\"languageCode\":{\"code\":\"en_US\"},\"communication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"email@test.com\",\"notificationIndicator\":true}]}},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\",\"hireReasonCode\":{\"code\":\"CURR\"},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"00045\"},\"addresses\":[{\"lineOne\":\"110 Notre-Dame St W\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"Montreal\",\"subdivisionCode\":{\"code\":\"QC\"},\"subdivisionCode2\":{\"code\":\"\"},\"countryCode\":\"CA\",\"postalCode\":\"H2Y 1T1\",\"deliveryPoint\":\"\"}],\"homeshoreIndicator\":false},\"job\":{\"jobCode\":{\"code\":\"ACCT\"},\"occupationalClassifications\":[{\"classificationCode\":{\"code\":\"2\"},\"classificationID\":{\"code\":\"EEOC\"}}]},\"workerTypeCode\":{\"code\":\"F\"},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"work@email.com\",\"notificationIndicator\":false}]},\"officerTypeCode\":{\"code\":\"EMP\"},\"benefitsEligibilityClassCode\":{\"code\":\"FT\"},\"managementPositionIndicator\":false,\"laborUnion\":{\"laborUnionCode\":{\"code\":\"EU\"}},\"bargainingUnit\":{\"bargainingUnitCode\":{\"code\":\"CSD\"}},\"reportsTo\":{\"positionID\":\"\"},\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"BusinessUnit\"},\"nameCode\":{\"code\":\"CORP\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\"},\"nameCode\":{\"code\":\"000BHH-BD\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\"},\"nameCode\":{\"code\":\"859956\"}}],\"selfEmployedWorkerTypeCode\":{\"code\":\"1\"}},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\",\"payrollFileNumber\":\"\",\"payrollScheduleGroupCode\":\"\",\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"8\"},\"payPeriodRateAmount\":{\"amount\":\"3000\"}},\"standardHours\":{\"hoursQuantity\":\"80\"},\"payCycleCode\":{\"code\":\"B\"},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":50}},{\"remunerationTypeCode\":{\"code\":\"Rate3Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate4Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate5Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate6Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate7Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate8Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate9Amount\"},\"remunerationRate\":{\"rate\":0}}],\"overtimeEligibilityIndicator\":false,\"tippedWorkerIndicator\":false,\"customFieldGroup\":{\"stringFields\":[{\"nameCode\":{\"code\":\"CustomArea1\"},\"stringValue\":\"Area1\"},{\"nameCode\":{\"code\":\"CustomArea2\"},\"stringValue\":\"Area2\"},{\"nameCode\":{\"code\":\"CustomArea3\"},\"stringValue\":\"Area3\"},{\"nameCode\":{\"code\":\"CustomArea4\"},\"stringValue\":\"Area4\"}],\"codeFields\":[{\"nameCode\":{\"code\":\"DataControl\"},\"code\":\"\"},{\"nameCode\":{\"code\":\"Clock\"},\"code\":\"\"}]}}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07. Starts the applicant onboarding process (Inprogress state) for US templates -Full Payload with minimal fields populated",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9200525655723_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"inprogress\"}},\"onboardingExperienceCode\":{\"code\":\"\"},\"employmentEligibilityOptionCode\":{\"code\":\"\"},\"workerID\":{\"id\":\"\"},\"preHireIndicator\":false,\"employmentEligibilityProfile\":{\"employerOrganization\":{\"locationNameCode\":{\"code\":\"\"}}},\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Test\",\"middleName\":\"The\",\"familyName\":\"Hire\"},\"legalName\":{\"givenName\":\"\",\"familyName\":\"\",\"salutations\":[{\"code\":\"\"}],\"generationAffix\":{\"code\":\"\"},\"qualificationAffix\":{\"code\":\"\"}},\"preferredGenderPronounCode\":{\"code\":\"\"},\"preferredName\":{\"nickName\":\"\"},\"genderCode\":{\"code\":\"\"},\"birthDate\":\"\",\"disabledIndicator\":false,\"disabilityTypeCodes\":[{\"code\":\"\"}],\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SSN\"},\"statusCode\":{\"code\":\"AppliedFor\"}}],\"tobaccoUserIndicator\":false,\"legalAddress\":{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"code\":\"\"},\"subdivisionCode2\":{\"code\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\",\"deliveryPoint\":\"\"},\"otherPersonalAddresses\":[{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"code\":\"\"},\"subdivisionCode2\":{\"code\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\"}],\"maritalStatusCode\":{\"code\":\"\",\"effectiveDateTime\":\"\"},\"socialInsurancePrograms\":[{\"nameCode\":{\"code\":\"Medicare\",\"name\":\"Medicare\"},\"coveredIndicator\":false},{\"nameCode\":{\"code\":\"Medicaid\",\"name\":\"Medicaid\"},\"coveredIndicator\":false}],\"raceCode\":{\"code\":\"\",\"identificationMethodCode\":{\"code\":\"\"}},\"ethnicityCode\":{\"code\":\"\"},\"languageCode\":{\"code\":\"\"},\"communication\":{\"landlines\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"mobiles\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"faxes\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"pagers\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"emails\":[{\"emailUri\":\"\",\"notificationIndicator\":false}]}},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\",\"hireReasonCode\":{\"code\":\"\"},\"workersCompensationCoverage\":{\"coverageStatus\":{\"code\":\"\"},\"coverageTypeCode\":{\"code\":\"\"},\"jobClassificationTypeCode\":{\"code\":\"\"},\"coverageClassTypeCode\":{\"code\":\"\"}},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"\"},\"addresses\":[{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"code\":\"\"},\"subdivisionCode2\":{\"code\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\",\"deliveryPoint\":\"\"}],\"homeshoreIndicator\":false},\"job\":{\"jobCode\":{\"code\":\"\"},\"wageLawCoverages\":[{\"wageLawNameCode\":{\"code\":\"\"}}],\"occupationalClassifications\":[{\"classificationCode\":{\"code\":\"\"},\"classificationID\":{\"code\":\"EEOC\"}},{\"classificationCode\":{\"code\":\"\"},\"classificationID\":{\"code\":\"EEO\"}}],\"industryClassifications\":[{\"classificationCode\":{\"code\":\"\"}}]},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"mobiles\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"faxes\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"pagers\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"emails\":[{\"emailUri\":\"\",\"notificationIndicator\":false}]},\"officerTypeCode\":{\"code\":\"\"},\"benefitsEligibilityClassCode\":{\"code\":\"\"},\"managementPositionIndicator\":false,\"workerTypeCode\":{\"code\":\"\"},\"reportsTo\":{\"positionID\":\"\"},\"acaBenefitEligibilityCode\":{\"code\":\"\"},\"acaBenefitEligibilityDate\":\"\",\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"BusinessUnit\"},\"nameCode\":{\"code\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\"},\"nameCode\":{\"code\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\"},\"nameCode\":{\"code\":\"\"}}],\"selfEmployedWorkerTypeCode\":{\"code\":\"\"}},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\",\"payrollFileNumber\":\"\",\"payrollScheduleGroupCode\":\"\",\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"\"},\"payPeriodRateAmount\":{\"amount\":\"\"}},\"standardHours\":{\"hoursQuantity\":\"\"},\"payCycleCode\":{\"code\":\"\"},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate3Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate4Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate5Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate6Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate7Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate8Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate9Amount\"},\"remunerationRate\":{\"rate\":null}}],\"overtimeEligibilityIndicator\":false,\"tippedWorkerIndicator\":false,\"wageEntityCode\":{\"code\":\"\"},\"customFieldGroup\":{\"stringFields\":[{\"nameCode\":{\"code\":\"CustomArea1\"},\"stringValue\":\"\"},{\"nameCode\":{\"code\":\"CustomArea2\"},\"stringValue\":\"\"},{\"nameCode\":{\"code\":\"CustomArea3\"},\"stringValue\":\"\"},{\"nameCode\":{\"code\":\"CustomArea4\"},\"stringValue\":\"\"}],\"codeFields\":[{\"nameCode\":{\"code\":\"DataControl\"},\"code\":\"\"},{\"nameCode\":{\"code\":\"Clock\"},\"code\":\"\"}]}},\"applicantTaxProfile\":{\"usFederalTaxInstruction\":{\"multipleJobIndicator\":false,\"federalIncomeTaxInstruction\":{\"taxFilingStatusCode\":{\"code\":\"\"},\"taxAllowanceQuantity\":null,\"additionalIncomeAmount\":{\"amount\":null},\"taxAllowances\":[{\"allowanceTypeCode\":{\"code\":\"Deductions\"},\"taxAllowanceAmount\":{\"amount\":null}},{\"allowanceTypeCode\":{\"code\":\"Dependents\"},\"taxAllowanceAmount\":{\"amount\":null}}]}},\"usStateTaxInstructions\":{\"stateIncomeTaxInstructions\":[{\"workedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"\"},\"taxFilingStatusCode\":{\"code\":\"\"},\"taxAllowanceQuantity\":null},{\"livedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"\"}}],\"suiTaxInstruction\":{\"stateCode\":{\"code\":\"\"},\"healthCoverageCode\":{\"code\":\"\"}}}}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "21. Hiring an Employee completely for the US client with Worked in County",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"14497_6706\",\"name\":\"HR + Payroll (System)\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"complete\",\"name\":\"\"}},\"workerID\":{\"id\":\"\"},\"employmentEligibilityOptionCode\":{\"code\":\"1\"},\"preHireIndicator\":false,\"employmentEligibilityProfile\":{\"employerOrganization\":{\"locationNameCode\":{\"code\":\"NA\"}}},\"onboardingExperienceCode\":{\"code\":\"default\"},\"applicantWorkerProfile\":{\"selfEmployedWorkerTypeCode\":{\"code\":\"1\"},\"hireDate\":\"2023-01-01\",\"hireReasonCode\":{\"code\":\"new\",\"name\":\"MYHIRE - My Hire\"},\"workersCompensationCoverage\":{\"coverageStatus\":{\"code\":\"\"},\"coverageTypeCode\":{\"code\":\"\"},\"jobClassificationTypeCode\":{\"code\":\"\"},\"coverageClassTypeCode\":{\"code\":\"\"}},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"AL\",\"name\":\"\"},\"addresses\":[{\"lineOne\":\"124 nepp\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"yonkers\",\"subdivisionCode\":{\"code\":\"NY\",\"name\":\"NY - New York\",\"subdivisionType\":\"\"},\"countryCode\":\"US\",\"postalCode\":\"12345\",\"subdivisionCode2\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"}}],\"homeshoreIndicator\":true},\"job\":{\"jobCode\":{\"code\":\"\",\"name\":\"\"},\"wageLawCoverages\":[{\"wageLawNameCode\":{\"code\":\"N\",\"name\":\"E - Exept\"}}],\"occupationalClassifications\":[{\"classificationCode\":{\"code\":\"6\"},\"classificationID\":{\"code\":\"EEOC\"}},{\"classificationCode\":{\"code\":\"\"},\"classificationID\":{\"code\":\"EEO\"}}],\"industryClassifications\":[{\"classificationCode\":{\"code\":\"\",\"name\":\"\"}}]},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543017\",\"extension\":\"324\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"945\",\"dialNumber\":\"7543016\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543017\",\"extension\":\"525\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543018\"}],\"emails\":[{\"emailUri\":\"\",\"notificationIndicator\":false}]},\"laborUnion\":{\"laborUnionCode\":{\"code\":\"UC\"}},\"bargainingUnit\":{\"bargainingUnitCode\":{\"code\":\"UL\",\"name\":\"\"}},\"officerTypeCode\":{\"code\":\"EMP\",\"name\":\"\"},\"payGradeCode\":{\"code\":\"PG1\",\"name\":\"\"},\"benefitsEligibilityClassCode\":{\"code\":\"\",\"name\":\"\"},\"managementPositionIndicator\":true,\"workerTypeCode\":{\"code\":\"f\",\"name\":\"\"},\"acaBenefitEligibilityCode\":{\"code\":\"D\",\"name\":\"D - Designate Full Time\"},\"acaBenefitEligibilityDate\":\"2019-11-18\",\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"LegalEntity\",\"name\":\"\"},\"nameCode\":{\"code\":\"527865434\",\"name\":\"NEW HIRE LEGAL ENTITY\"}},{\"unitTypeCode\":{\"code\":\"BusinessUnit\",\"name\":\"\"},\"nameCode\":{\"code\":\"\",\"name\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\",\"name\":\"\"},\"nameCode\":{\"code\":\"\",\"name\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\",\"name\":\"\"},\"nameCode\":{\"code\":\"\",\"name\":\"\"}}]},\"applicantPayrollProfile\":{\"payrollFileNumber\":\"034225\",\"overtimeEligibilityIndicator\":true,\"payrollGroupCode\":\"KKO\",\"standardHours\":{\"hoursQuantity\":\"86.67\",\"unitCode\":{\"code\":\"H\"},\"payCycleCode\":\"2\"},\"tippedWorkerIndicator\":true,\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"1\"},\"payPeriodRateAmount\":{\"amount\":\"100\"}},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":545}},{\"remunerationTypeCode\":{\"code\":\"Rate3Amount\"},\"remunerationRate\":{\"rate\":30}},{\"remunerationTypeCode\":{\"code\":\"Rate4Amount\"},\"remunerationRate\":{\"rate\":40}},{\"remunerationTypeCode\":{\"code\":\"Rate5Amount\"},\"remunerationRate\":{\"rate\":50}},{\"remunerationTypeCode\":{\"code\":\"Rate6Amount\"},\"remunerationRate\":{\"rate\":60}},{\"remunerationTypeCode\":{\"code\":\"Rate7Amount\"},\"remunerationRate\":{\"rate\":70}},{\"remunerationTypeCode\":{\"code\":\"Rate8Amount\"},\"remunerationRate\":{\"rate\":80}},{\"remunerationTypeCode\":{\"code\":\"Rate9Amount\"},\"remunerationRate\":{\"rate\":90}}],\"wageEntityCode\":{\"code\":\"\"},\"customFieldGroup\":{\"stringFields\":[{\"nameCode\":{\"code\":\"CustomArea1\"},\"stringValue\":\"dsfds\"},{\"nameCode\":{\"code\":\"CustomArea2\"},\"stringValue\":\"dfgdgjhklm\"},{\"nameCode\":{\"code\":\"CustomArea3\"},\"stringValue\":\"dfgdgjhklm\"},{\"nameCode\":{\"code\":\"CustomArea4\"},\"stringValue\":\"jadfdfds\"}],\"codeFields\":[{\"nameCode\":{\"code\":\"DataControl\"},\"code\":\"\"},{\"nameCode\":{\"code\":\"Clock\"},\"code\":\"\"}]},\"payrollScheduleGroupCode\":\"1\"},\"applicantPersonalProfile\":{\"preferredGenderPronounCode\":{\"code\":\"She/Her/Hers\",\"name\":\"He/Him/His\"},\"genderReportingDetails\":{\"reportedGenderCode\":{\"code\":\"M\"}},\"birthName\":{\"givenName\":\"workedInCountyAP\",\"middleName\":\"\",\"familyName\":\"Test2\"},\"legalName\":{\"salutations\":[{\"code\":\"Hon.\",\"name\":\"Hon. - Hon.\"}],\"generationAffix\":{\"code\":\"I\",\"name\":\"I - the first\"},\"qualificationAffix\":{\"code\":\"RN\",\"name\":\"RN - Registered Nurse\"}},\"genderCode\":{\"code\":\"F\",\"name\":\"F - Female\"},\"birthDate\":\"2000-04-04\",\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SSN\",\"name\":\"SSN - Social Security Number\"},\"statusCode\":{\"code\":\"AppliedFor\",\"name\":\"\",\"effectiveDateTime\":\"\"},\"expirationDate\":\"\"}],\"legalAddress\":{\"lineOne\":\"124 neppf\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"yonkers\",\"subdivisionCode\":{\"code\":\"NY\",\"name\":\"NY - New York\",\"subdivisionType\":\"\"},\"countryCode\":\"US\",\"postalCode\":\"10018\",\"subdivisionCode2\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"},\"deliveryPoint\":\"work mail stop\"},\"otherPersonalAddresses\":[{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\",\"subdivisionCode2\":{\"code\":\"\",\"name\":\"\",\"subdivisionType\":\"\"}}],\"languageCode\":{\"code\":\"en_US\",\"name\":\"en_US - English (US)\"},\"maritalStatusCode\":{\"code\":\"M\",\"name\":\"M - Married\",\"effectiveDateTime\":\"2015-06-06\"},\"tobaccoUserIndicator\":true,\"socialInsurancePrograms\":[{\"nameCode\":{\"code\":\"Medicare\",\"name\":\"Medicare\"},\"coveredIndicator\":true},{\"nameCode\":{\"code\":\"Medicaid\",\"name\":\"Medicaid\"},\"coveredIndicator\":true}],\"raceCode\":{\"code\":\"1\",\"name\":\"1 - White\",\"identificationMethodCode\":{\"code\":\"VID\",\"name\":\"VID - Visual ID\"}},\"ethnicityCode\":{\"code\":\"4\",\"name\":\"4 - Not Hispanic or Latino\"},\"communication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543011\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"945\",\"dialNumber\":\"7543017\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543013\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"541\",\"dialNumber\":\"7543017\",\"extension\":\"013\"}],\"emails\":[{\"emailUri\":\"sreekanth.random@adp.com\",\"notificationIndicator\":true}]},\"disabledIndicator\":true,\"disabilityTypeCodes\":[{\"code\":\"D\",\"name\":\"D - I\"}]},\"applicantTaxProfile\":{\"usFederalTaxInstruction\":{\"multipleJobIndicator\":true,\"federalIncomeTaxInstruction\":{\"taxFilingStatusCode\":{\"code\":\"D\"},\"taxWithholdingStatus\":{\"statusCode\":{\"code\":\"Exempt\"}},\"federalUnemploymentTaxInstruction\":{\"taxWithholdingStatus\":{\"statusCode\":{\"code\":\"\"}}},\"taxAllowanceQuantity\":20,\"additionalIncomeAmount\":{\"amount\":0},\"additionalTaxAmount\":{\"amount\":0},\"taxAllowances\":[{\"allowanceTypeCode\":{\"code\":\"Deductions\"},\"taxAllowanceAmount\":{\"amount\":0}},{\"allowanceTypeCode\":{\"code\":\"Dependents\"},\"taxAllowanceAmount\":{\"amount\":0}}]}},\"usStateTaxInstructions\":{\"stateIncomeTaxInstructions\":[{\"workedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"AL\"}},{\"livedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"NY\"},\"taxAllowanceQuantity\":4},{\"countyOfResidenceCode\":{\"code\":\"54003\"}}],\"suiTaxInstruction\":{\"stateCode\":{\"code\":\"26\"},\"healthCoverageCode\":{\"code\":\"\"},\"taxReportingTypeCode\":{\"code\":\"\"}},\"socCode\":{\"code\":\"111011\"}},\"localTaxInstructions\":[{\"livedInJurisdictionIndicator\":true,\"localCode\":{\"code\":\"\"},\"taxAllowanceQuantity\":0},{\"workedInJurisdictionIndicator\":true,\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"PA_LST_Local_4\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"PA_LST_Local_5\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"NY_MTA_Local\"},\"localCode\":{\"code\":\"\"}}]}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "08. Starts the applicant onboarding process (Inprogress state) for CA Template - Full Payload with minimal fields populated",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9203338607711_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"inprogress\"}},\"onboardingExperienceCode\":{\"code\":\"\"},\"employmentEligibilityOptionCode\":{\"code\":\"\"},\"workerID\":{\"id\":\"\"},\"preHireIndicator\":false,\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Test\",\"middleName\":\"The\",\"familyName\":\"Hire\"},\"legalName\":{\"givenName\":\"\",\"familyName\":\"\",\"salutations\":[{\"code\":\"\"}],\"generationAffix\":{\"code\":\"\"},\"qualificationAffix\":{\"code\":\"\"}},\"preferredName\":{\"nickName\":\"Testy\"},\"genderCode\":{\"code\":\"\"},\"birthDate\":\"\",\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SIN\"},\"statusCode\":{\"code\":\"\"}}],\"tobaccoUserIndicator\":false,\"legalAddress\":{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"code\":\"\"},\"subdivisionCode2\":{\"code\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\",\"deliveryPoint\":\"\"},\"otherPersonalAddresses\":[{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"code\":\"\"},\"subdivisionCode2\":{\"code\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\",\"deliveryPoint\":\"\"}],\"maritalStatusCode\":{\"code\":\"\",\"effectiveDateTime\":\"\"},\"languageCode\":{\"code\":\"\"},\"communication\":{\"landlines\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"mobiles\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"faxes\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"pagers\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"emails\":[{\"emailUri\":\"\",\"notificationIndicator\":false}]}},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\",\"hireReasonCode\":{\"code\":\"\"},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"\"},\"addresses\":[{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"code\":\"\"},\"subdivisionCode2\":{\"code\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\",\"deliveryPoint\":\"\"}],\"homeshoreIndicator\":false},\"job\":{\"jobCode\":{\"code\":\"\"},\"occupationalClassifications\":[{\"classificationCode\":{\"code\":\"\"},\"classificationID\":{\"code\":\"EEOC\"}}]},\"workerTypeCode\":{\"code\":\"\"},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"mobiles\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"faxes\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"pagers\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"emails\":[{\"emailUri\":\"\",\"notificationIndicator\":false}]},\"officerTypeCode\":{\"code\":\"\"},\"benefitsEligibilityClassCode\":{\"code\":\"\"},\"managementPositionIndicator\":false,\"laborUnion\":{\"laborUnionCode\":{\"code\":\"\"}},\"bargainingUnit\":{\"bargainingUnitCode\":{\"code\":\"\"}},\"reportsTo\":{\"positionID\":\"\"},\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"BusinessUnit\"},\"nameCode\":{\"code\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\"},\"nameCode\":{\"code\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\"},\"nameCode\":{\"code\":\"\"}}],\"selfEmployedWorkerTypeCode\":{\"code\":\"\"}},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\",\"payrollFileNumber\":\"\",\"payrollScheduleGroupCode\":\"\",\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"\"},\"payPeriodRateAmount\":{\"amount\":\"\"}},\"standardHours\":{\"hoursQuantity\":\"\"},\"payCycleCode\":{\"code\":\"\"},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate3Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate4Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate5Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate6Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate7Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate8Amount\"},\"remunerationRate\":{\"rate\":null}},{\"remunerationTypeCode\":{\"code\":\"Rate9Amount\"},\"remunerationRate\":{\"rate\":null}}],\"overtimeEligibilityIndicator\":false,\"tippedWorkerIndicator\":false,\"customFieldGroup\":{\"stringFields\":[{\"nameCode\":{\"code\":\"CustomArea1\"},\"stringValue\":\"\"},{\"nameCode\":{\"code\":\"CustomArea2\"},\"stringValue\":\"\"},{\"nameCode\":{\"code\":\"CustomArea3\"},\"stringValue\":\"\"},{\"nameCode\":{\"code\":\"CustomArea4\"},\"stringValue\":\"\"}],\"codeFields\":[{\"nameCode\":{\"code\":\"DataControl\"},\"code\":\"\"},{\"nameCode\":{\"code\":\"Clock\"},\"code\":\"\"}]}}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16. Bad Request - when pre-hire is true, but only mandatory fields are passed in the request.",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9200525655723_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"inprogress\",\"name\":\"inprogress\"}},\"preHireIndicator\":true,\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Test\",\"familyName\":\"Demo\"}},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-03\"},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\"}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11. Starts the applicant onboarding process (Inprogress state) with Ohio(OH) School District for US Client",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9200525655723_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"inprogress\"}},\"onboardingExperienceCode\":{\"code\":\"default\"},\"employmentEligibilityOptionCode\":{\"code\":\"0\"},\"preHireIndicator\":false,\"employmentEligibilityProfile\":{\"employerOrganization\":{\"locationNameCode\":{\"code\":\"2554683735_1\"}}},\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"adam\",\"middleName\":\"The\",\"familyName\":\"christ\"},\"legalName\":{\"givenName\":\"adam\",\"familyName\":\"The\",\"salutations\":[{\"code\":\"Mr.\"}],\"generationAffix\":{\"code\":\"2nd\"},\"qualificationAffix\":{\"code\":\"MD\"}},\"preferredGenderPronounCode\":{\"code\":\"He/Him/His\"},\"preferredName\":{\"nickName\":\"Princy\"},\"genderCode\":{\"code\":\"M\"},\"birthDate\":\"1980-01-01\",\"disabledIndicator\":true,\"disabilityTypeCodes\":[{\"code\":\"N\"}],\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SSN\"},\"statusCode\":{\"code\":\"AppliedFor\"}}],\"tobaccoUserIndicator\":false,\"legalAddress\":{\"lineOne\":\"151 W 4th St\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"Cincinnati\",\"subdivisionCode\":{\"code\":\"OH\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"45202\",\"deliveryPoint\":\"\"},\"otherPersonalAddresses\":[{\"lineOne\":\"5801 Windward Plaza\",\"lineTwo\":\"line2\",\"lineThree\":\"line3\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\"}],\"maritalStatusCode\":{\"code\":\"M\",\"effectiveDateTime\":\"2020-01-01\"},\"socialInsurancePrograms\":[{\"nameCode\":{\"code\":\"Medicare\",\"name\":\"Medicare\"},\"coveredIndicator\":false},{\"nameCode\":{\"code\":\"Medicaid\",\"name\":\"Medicaid\"},\"coveredIndicator\":false}],\"raceCode\":{\"code\":\"1\",\"identificationMethodCode\":{\"code\":\"SID\"}},\"ethnicityCode\":{\"code\":\"4\"},\"languageCode\":{\"code\":\"en_US\"},\"communication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"email@test.com\",\"notificationIndicator\":true}]}},\"applicantWorkerProfile\":{\"hireDate\":\"2023-05-22\",\"hireReasonCode\":{\"code\":\"CURR\"},\"workersCompensationCoverage\":{\"coverageStatus\":{\"code\":\"N\"},\"coverageTypeCode\":{\"code\":\"N\"},\"jobClassificationTypeCode\":{\"code\":\"CM\"},\"coverageClassTypeCode\":{\"code\":\"R\"}},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"001\"},\"addresses\":[{\"lineOne\":\"5801 Windward Plaza\",\"lineTwo\":\"line2\",\"lineThree\":\"line3\",\"cityName\":\"Alpharetta\",\"subdivisionCode\":{\"code\":\"GA\"},\"subdivisionCode2\":{\"code\":\"county\"},\"countryCode\":\"US\",\"postalCode\":\"30005\"}],\"homeshoreIndicator\":false},\"job\":{\"jobCode\":{\"code\":\"AA\"},\"wageLawCoverages\":[{\"wageLawNameCode\":{\"code\":\"E\"}}],\"occupationalClassifications\":[{\"classificationCode\":{\"code\":\"2\"},\"classificationID\":{\"code\":\"EEOC\"}},{\"classificationCode\":{\"code\":\"CORP\"},\"classificationID\":{\"code\":\"EEO\"}}],\"industryClassifications\":[{\"classificationCode\":{\"code\":\"517910\"}}]},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"mobiles\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"faxes\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"pagers\":[{\"countryDialing\":\"1\",\"areaDialing\":\"844\",\"dialNumber\":\"2275237\"}],\"emails\":[{\"emailUri\":\"work@email.com\",\"notificationIndicator\":false}]},\"officerTypeCode\":{\"code\":\"EMP\"},\"benefitsEligibilityClassCode\":{\"code\":\"SLRY\"},\"managementPositionIndicator\":false,\"workerTypeCode\":{\"code\":\"F\"},\"reportsTo\":{\"positionID\":\"\"},\"acaBenefitEligibilityCode\":{\"code\":\"D\"},\"acaBenefitEligibilityDate\":\"2023-01-01\",\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"BusinessUnit\"},\"nameCode\":{\"code\":\"CORP\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\"},\"nameCode\":{\"code\":\"001101AA\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\"},\"nameCode\":{\"code\":\"101000\"}}],\"selfEmployedWorkerTypeCode\":{\"code\":\"1\"}},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\",\"payrollScheduleGroupCode\":\"1\",\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"8\"},\"payPeriodRateAmount\":{\"amount\":\"3000\"}},\"standardHours\":{\"hoursQuantity\":\"80\"},\"payCycleCode\":{\"code\":\"B\"},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":50}},{\"remunerationTypeCode\":{\"code\":\"Rate3Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate4Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate5Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate6Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate7Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate8Amount\"},\"remunerationRate\":{\"rate\":0}},{\"remunerationTypeCode\":{\"code\":\"Rate9Amount\"},\"remunerationRate\":{\"rate\":0}}],\"overtimeEligibilityIndicator\":false,\"tippedWorkerIndicator\":false,\"wageEntityCode\":{\"code\":\"AZ - FLAGST - FLAGSTAFF\"},\"customFieldGroup\":{\"stringFields\":[{\"nameCode\":{\"code\":\"CustomArea1\"},\"stringValue\":\"Area1\"},{\"nameCode\":{\"code\":\"CustomArea2\"},\"stringValue\":\"Area2\"},{\"nameCode\":{\"code\":\"CustomArea3\"},\"stringValue\":\"Area3\"},{\"nameCode\":{\"code\":\"CustomArea4\"},\"stringValue\":\"Area4\"}],\"codeFields\":[{\"nameCode\":{\"code\":\"DataControl\"},\"code\":\"\"},{\"nameCode\":{\"code\":\"Clock\"},\"code\":\"11111\"}]}},\"applicantTaxProfile\":{\"usFederalTaxInstruction\":{\"multipleJobIndicator\":false,\"federalIncomeTaxInstruction\":{\"taxFilingStatusCode\":{\"code\":\"D\"},\"taxAllowanceQuantity\":0,\"additionalIncomeAmount\":{\"amount\":0},\"taxAllowances\":[{\"allowanceTypeCode\":{\"code\":\"Deductions\"},\"taxAllowanceAmount\":{\"amount\":0}},{\"allowanceTypeCode\":{\"code\":\"Dependents\"},\"taxAllowanceAmount\":{\"amount\":0}}]}},\"usStateTaxInstructions\":{\"stateIncomeTaxInstructions\":[{\"workedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"OH\"},\"taxFilingStatusCode\":{\"code\":\"S\"},\"taxAllowanceQuantity\":0},{\"livedInJurisdictionIndicator\":true,\"stateCode\":{\"code\":\"OH\"}}],\"suiTaxInstruction\":{\"stateCode\":{\"code\":\"30\"},\"healthCoverageCode\":{\"code\":\"\"}}},\"localTaxInstructions\":[{\"livedInJurisdictionIndicator\":true,\"localCode\":{\"code\":\"\"},\"taxAllowanceQuantity\":null},{\"workedInJurisdictionIndicator\":true,\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"PA_LST_Local_4\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"PA_LST_Local_5\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"NY_MTA_Local\"},\"localCode\":{\"code\":\"\"}},{\"taxTypeCode\":{\"code\":\"OH_SchoolDistrict\",\"name\":\"OH_SchoolDistrict\"},\"localCode\":{\"code\":\"3902\",\"name\":\"Ohion SD 3902\"}}]}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "09. Starts the applicant onboarding process (Inprogress state) for International Templates -Full Payload with minimal fields populated",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9360972_1439\"},\"countryCode\":\"GB\",\"onboardingStatus\":{\"statusCode\":{\"code\":\"inprogress\"}},\"onboardingExperienceCode\":{\"code\":\"\"},\"workerID\":{\"id\":\"\"},\"preHireIndicator\":false,\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"Test\",\"middleName\":\"The\",\"familyName\":\"Hire\"},\"legalName\":{\"salutations\":[{\"code\":\"\"}],\"generationAffix\":{\"code\":\"\"},\"qualificationAffix\":{\"code\":\"\"}},\"preferredName\":{\"nickName\":\"\"},\"genderCode\":{\"code\":\"\"},\"birthDate\":\"\",\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"\"}}],\"legalAddress\":{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"codeValue\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\",\"deliveryPoint\":\"\"},\"otherPersonalAddresses\":[{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"code\":\"\"},\"subdivisionCode2\":{\"code\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\"}],\"communication\":{\"landlines\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\",\"extension\":\"\"}],\"mobiles\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"faxes\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"pagers\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"emails\":[{\"emailUri\":\"\",\"notificationIndicator\":false}]},\"maritalStatusCode\":{\"code\":\"\",\"effectiveDateTime\":\"\"}},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\",\"hireReasonCode\":{\"code\":\"\"},\"job\":{\"jobCode\":{\"code\":\"\"}},\"payGradeCode\":{\"code\":\"\"},\"homeWorkLocation\":{\"nameCode\":{\"code\":\"\"},\"addresses\":[{\"lineOne\":\"\",\"lineTwo\":\"\",\"lineThree\":\"\",\"cityName\":\"\",\"subdivisionCode\":{\"code\":\"\"},\"subdivisionCode2\":{\"code\":\"\"},\"countryCode\":\"\",\"postalCode\":\"\",\"deliveryPoint\":\"\"}],\"homeshoreIndicator\":false},\"businessCommunication\":{\"landlines\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"mobiles\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"faxes\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"pagers\":[{\"countryDialing\":\"\",\"areaDialing\":\"\",\"dialNumber\":\"\"}],\"emails\":[{\"emailUri\":\"\",\"notificationIndicator\":false}]},\"homeOrganizationalUnits\":[{\"unitTypeCode\":{\"code\":\"BusinessUnit\"},\"nameCode\":{\"code\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeCostNumber\"},\"nameCode\":{\"code\":\"\"}},{\"unitTypeCode\":{\"code\":\"HomeDepartment\"},\"nameCode\":{\"code\":\"\"}}],\"officerTypeCode\":{\"code\":\"\"},\"workerTypeCode\":{\"code\":\"\"}},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\",\"payrollScheduleGroupCode\":\"\",\"baseRemuneration\":{\"recordingBasisCode\":{\"code\":\"\"},\"payPeriodRateAmount\":{\"amount\":\"\"}},\"standardHours\":{\"hoursQuantity\":\"\"},\"payCycleCode\":{\"code\":\"\"},\"additionalRemunerations\":[{\"remunerationTypeCode\":{\"code\":\"Rate2Amount\"},\"remunerationRate\":{\"rate\":null}}]}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "17. Bad Request - [in progress] - When first name is not passed in the request",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicantOnboarding\":{\"onboardingTemplateCode\":{\"code\":\"9200525655723_1\"},\"onboardingStatus\":{\"statusCode\":{\"code\":\"inprogress\"}},\"applicantPersonalProfile\":{\"birthName\":{\"givenName\":\"\",\"familyName\":\"Grill\"},\"governmentIDs\":[{\"id\":\"\",\"nameCode\":{\"code\":\"SSN\"},\"statusCode\":{\"code\":\"AppliedFor\"}}]},\"applicantWorkerProfile\":{\"hireDate\":\"2024-09-02\"},\"applicantPayrollProfile\":{\"payrollGroupCode\":\"{{payrollGroupCode}}\"},\"applicantTaxProfile\":{}}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Returning an applicant's metadata for International Client",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard/meta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard",
+						"meta"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1. Returning an applicant's metadata for US Client",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard/meta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard",
+						"meta"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Returns an applicant's metadata for CANADA template.",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard/meta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard",
+						"meta"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Corporate Directory",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					},
+					{
+						"key": "roleCode",
+						"value": "employee",
+						"dataFormat": "string"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/hr/v1/corporate-contacts",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v1",
+						"corporate-contacts"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieves employees corporate contact photo",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hr/v2/workers/{aoid}/worker-images/photo",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers",
+						":aoid",
+						"worker-images",
+						"photo"
+					],
+					"query": [],
+					"variable": [
+						{
+							"key": "aoid",
+							"value": "{undefined}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving worker info by worker indicative data",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.read/meta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.read",
+						"meta"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1. Worker Rehire for US client",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					},
+					{
+						"key": "roleCode",
+						"value": "employee",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"transform\":{\"effectiveDateTime\":\"2020-12-22\",\"worker\":{\"associateOID\":\"{{employeeAOID}}\",\"workerDates\":{\"rehireDate\":\"2020-12-22\"},\"workerStatus\":{\"reasonCode\":{\"codeValue\":\"CURR\"}}}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.rehire",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.rehire"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Worker Rehire for Cross Border Client",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					},
+					{
+						"key": "roleCode",
+						"value": "employee",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"transform\":{\"effectiveDateTime\":\"2021-01-06\",\"worker\":{\"associateOID\":\"{{employeeAOID}}\",\"workerDates\":{\"rehireDate\":\"2021-01-06\"},\"workerStatus\":{\"reasonCode\":{\"codeValue\":\"CURR\"}}}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.rehire",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.rehire"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Worker Rehire for CANADA client",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					},
+					{
+						"key": "roleCode",
+						"value": "employee",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"transform\":{\"effectiveDateTime\":\"2021-01-06\",\"worker\":{\"associateOID\":\"{{employeeAOID}}\",\"workerDates\":{\"rehireDate\":\"2021-01-06\"},\"workerStatus\":{\"reasonCode\":{\"codeValue\":\"CURR\"}}}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.rehire",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.rehire"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Workers Rehire meta",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					},
+					{
+						"key": "roleCode",
+						"value": "employee",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.rehire/meta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.rehire",
+						"meta"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving full worker info",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hr/v2/workers",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving full workers info",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hr/v2/workers/{aoid}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers",
+						":aoid"
+					],
+					"query": [],
+					"variable": [
+						{
+							"key": "aoid",
+							"value": "{undefined}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving full workers info",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hr/v2/workers/meta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers",
+						"meta"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Specific Worker Meta",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/hr/v2/workers/{aoid}/meta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers",
+						":aoid",
+						"meta"
+					],
+					"query": [],
+					"variable": [
+						{
+							"key": "aoid",
+							"value": "{undefined}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving basic worker demographic Info",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					},
+					{
+						"key": "roleCode",
+						"value": "employee",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hr/v2/worker-demographics",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"worker-demographics"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving Basic Worker Demographic Information",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					},
+					{
+						"key": "roleCode",
+						"value": "employee",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hr/v2/worker-demographics/{aoid}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"worker-demographics",
+						":aoid"
+					],
+					"query": [],
+					"variable": [
+						{
+							"key": "aoid",
+							"value": "{undefined}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving basic worker demographic info",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					},
+					{
+						"key": "roleCode",
+						"value": "employee",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hr/v2/worker-demographics/meta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"worker-demographics",
+						"meta"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scenario 1 - Data Control API",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/codelists/payroll/v4/payroll-instruction-management/{code-type}/wfn/{version-id}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"codelists",
+						"payroll",
+						"v4",
+						"payroll-instruction-management",
+						":code-type",
+						"wfn",
+						":version-id"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Add DD with Priority",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[{\"precedenceCode\":{\"codeValue\":\"1\"},\"distributionAmount\":{\"amountValue\":\"300\"},\"depositAccount\":{\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"X\"}},\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}}}},{\"distributionAmount\":{\"amountValue\":\"500\"},\"depositAccount\":{\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"Y\"}},\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Updating DD with Amount to deposit as Percent Net",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[{\"itemID\":\"9201158803848_1\",\"distributionPercentage\":\"50\",\"depositAccount\":{\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"x\"}},\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "20. Add DD with Priority (Canadian Clients)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-28\",\"payDistribution\":{\"distributionInstructions\":[{\"distributionAmount\":{\"amountValue\":\"100\"},\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP5\",\"shortName\":\"DEPOSIT ACCT5\"}}}},{\"precedenceCode\":{\"codeValue\":\"1\"},\"distributionAmount\":{\"amountValue\":\"500\"},\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP3\",\"shortName\":\"DEPOSIT ACCT3\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19. Adding DD with Multiple Deposit Codes (Canadian Clients)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-28\",\"payDistribution\":{\"distributionInstructions\":[{\"distributionAmount\":{\"amountValue\":\"200\"},\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP1\",\"shortName\":\"DEPOSIT ACCT1\"}}}},{\"distributionAmount\":{\"amountValue\":\"300\"},\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP2\",\"shortName\":\"DEPOSIT ACCT2\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "23. Updating DD with Amount to deposit as Percentage net ( Canadian Clients)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-28\",\"payDistribution\":{\"distributionInstructions\":[{\"itemID\":\"9201157949865_1\",\"distributionPercentage\":\"60\",\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP5\",\"shortName\":\"DEPOSIT ACCT5\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "27. Removing Direct Deposit (Canadian Client)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Adding DD with Amount to deposit as Full Net",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"payDistribution\":{\"effectiveDateTime\":\"2024-05-31\",\"distributionInstructions\":[{\"remainingBalanceIndicator\":true,\"depositAccount\":{\"financialParty\":{\"routingTransitID\":{\"idValue\":\"031207607\"}},\"financialAccount\":{\"accountNumber\":\"4172678660116\",\"typeCode\":{\"codeValue\":\"Z\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9. Adding DD with Prenote as Custom",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"payDistribution\":{\"effectiveDateTime\":\"2024-05-31\",\"distributionInstructions\":[{\"prenoteBypassIndicator\":true,\"prenote\":{\"prenoteOptionCode\":{\"codeValue\":\"C\",\"prenoteDate\":\"2024-05-31\"},\"prenoteDescription\":\"This is partial net\",\"prenoteDate\":\"2024-05-31\"},\"remainingBalanceIndicator\":true,\"depositAccount\":{\"financialParty\":{\"routingTransitID\":{\"idValue\":\"031207607\"}},\"financialAccount\":{\"accountNumber\":\"4172678660116\",\"typeCode\":{\"codeValue\":\"x\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "26. Update DD from Active to Inactive (Canadian Clients)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-28\",\"payDistribution\":{\"distributionInstructions\":[{\"instructionStatusCode\":{\"codeValue\":\"I\",\"shortName\":\"Inactive\"},\"distributionAmount\":{\"amountValue\":\"200\"},\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP4\",\"shortName\":\"DEPOSIT ACCT4\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Adding DD with Prenote as Company Default",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"payDistribution\":{\"effectiveDateTime\":\"2024-05-31\",\"distributionInstructions\":[{\"prenoteBypassIndicator\":true,\"prenote\":{\"prenoteOptionCode\":{\"codeValue\":\"D\"}},\"remainingBalanceIndicator\":true,\"depositAccount\":{\"financialParty\":{\"routingTransitID\":{\"idValue\":\"031207607\"}},\"financialAccount\":{\"accountNumber\":\"4172678660116\",\"typeCode\":{\"codeValue\":\"X\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "21. Adding DD as Bonus pay (Canadian Clients)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-28\",\"payDistribution\":{\"distributionInstructions\":[{\"bonusOnlyIndicator\":true,\"distributionPercentage\":\"50\",\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP5\",\"shortName\":\"DEPOSIT ACCT5\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12. Updating DD with Amount to deposit as Full Net",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"payDistribution\":{\"effectiveDateTime\":\"2024-05-31\",\"distributionInstructions\":[{\"itemID\":\"9201158803848_1\",\"remainingBalanceIndicator\":true,\"depositAccount\":{\"financialParty\":{\"routingTransitID\":{\"idValue\":\"031207607\"}},\"financialAccount\":{\"accountNumber\":\"4172678660111\",\"typeCode\":{\"codeValue\":\"Z\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Add DD with Amount to deposit as Partial Net",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[{\"distributionAmount\":{\"amountValue\":\"300\"},\"depositAccount\":{\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"W\"}},\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "24. Update DD with Amount to deposit as Full Net (Canadian Clients)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-28\",\"payDistribution\":{\"distributionInstructions\":[{\"itemID\":\"9201157949865_1\",\"remainingBalanceIndicator\":true,\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118163\",\"typeCode\":{\"codeValue\":\"DP2\",\"shortName\":\"DEPOSIT ACCT2\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11. Updating DD with Amount to deposit as Partial Net",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[{\"itemID\":\"9201158803848_1\",\"distributionAmount\":{\"amountValue\":\"700\"},\"depositAccount\":{\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"W\"}},\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14. Updating DD from Active to Inactive",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[{\"instructionStatusCode\":{\"codeValue\":\"I\",\"shortName\":\"Inactive\"},\"depositAccount\":{\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}},\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"w\",\"shortName\":\"w\"}}},\"remainingBalanceIndicator\":true}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add or update direct deposit with Prenote and with BonusPay",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"26849471_194297\"}},\"transform\":{\"effectiveDateTime\":\"2019-04-01\",\"payDistribution\":{\"distributionInstructions\":[{\"bonusOnlyIndicator\":false,\"precedenceCode\":{\"codeValue\":\"1\"},\"depositAccount\":{\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}},\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"Y\",\"shortName\":\"Y\"}}},\"distributionPercentage\":\"10\"}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13. Updating DD with Multiple Deposit Codes",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[{\"itemID\":\"9201158803848_1\",\"distributionAmount\":{\"amountValue\":\"300\"},\"depositAccount\":{\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"Z\"}},\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}}}},{\"itemID\":\"9201158803848_1\",\"distributionAmount\":{\"amountValue\":\"500\"},\"depositAccount\":{\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"Y\"}},\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Adding DD with Multiple Deposit Codes.",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[{\"distributionAmount\":{\"amountValue\":\"300\"},\"depositAccount\":{\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"x\"}},\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}}}},{\"distributionAmount\":{\"amountValue\":\"500\"},\"depositAccount\":{\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"w\"}},\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. Adding DD with Prenote as No-Prenote",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"payDistribution\":{\"effectiveDateTime\":\"2024-05-31\",\"distributionInstructions\":[{\"prenoteBypassIndicator\":true,\"prenote\":{\"prenoteOptionCode\":{\"codeValue\":\"N\"}},\"remainingBalanceIndicator\":true,\"depositAccount\":{\"financialParty\":{\"routingTransitID\":{\"idValue\":\"031207607\"}},\"financialAccount\":{\"accountNumber\":\"4172678660116\",\"typeCode\":{\"codeValue\":\"y\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15. Removing direct deposit",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1. Adding DD with Amount to deposit as Percent Net",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[{\"distributionPercentage\":\"50\",\"depositAccount\":{\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"x\"}},\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22. Updating DD with Amount to deposit as Partial Net Copy ( Canadian Clients)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[{\"itemID\":\"9201157949865_1\",\"distributionAmount\":{\"amountValue\":\"350\"},\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP1\",\"shortName\":\"DEPOSIT ACCT1\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add or Update direct deposit for a Canada based client",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"2498590542_4686\"}},\"transform\":{\"effectiveDateTime\":\"2019-10-31\",\"payDistribution\":{\"distributionInstructions\":[{\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"001\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118124\",\"typeCode\":{\"codeValue\":\"DP2\",\"shortName\":\"DP2\"}}},\"distributionAmount\":{\"amountValue\":1500}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18. Adding DD with Amount to deposit as Full Net (Canadian client)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-28\",\"payDistribution\":{\"distributionInstructions\":[{\"remainingBalanceIndicator\":true,\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP2\",\"shortName\":\"DEPOSIT ACCT2\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "25. Updating DD with Multiple Deposit Codes (Canadian Clients)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-28\",\"payDistribution\":{\"distributionInstructions\":[{\"itemID\":\"9201157949865_1\",\"distributionAmount\":{\"amountValue\":\"100\"},\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP1\",\"shortName\":\"DEPOSIT ACCT1\"}}}},{\"itemID\":\"9201155250563_1\",\"distributionAmount\":{\"amountValue\":\"500\"},\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP2\",\"shortName\":\"DEPOSIT ACCT2\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16. Add DD with Amount to deposit as Partial Net (canadian clients)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[{\"distributionAmount\":{\"amountValue\":\"300\"},\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP1\",\"shortName\":\"DEPOSIT ACCT1\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add or update direct deposit for a client in U.S.",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"26849471_194297\"}},\"transform\":{\"effectiveDateTime\":\"2019-04-01\",\"payDistribution\":{\"distributionInstructions\":[{\"depositAccount\":{\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}},\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"Y\",\"shortName\":\"Y\"}}},\"distributionAmount\":{\"amountValue\":900}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Adding DD as Bonus Pay",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-31\",\"payDistribution\":{\"distributionInstructions\":[{\"bonusOnlyIndicator\":true,\"distributionPercentage\":\"50\",\"depositAccount\":{\"financialAccount\":{\"accountNumber\":\"123456778\",\"typeCode\":{\"codeValue\":\"z\"}},\"financialParty\":{\"routingTransitID\":{\"idValue\":\"823456789\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "17. Adding DD with Amount to deposit as Percentage net (Canadian Clients)",
+			"request": {
+				"method": "post",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"events\":[{\"data\":{\"eventContext\":{\"worker\":{\"associateOID\":\"{{employeeAOID}}\"},\"payDistribution\":{\"itemID\":\"{{workAssignmentID}}\"}},\"transform\":{\"effectiveDateTime\":\"2024-05-28\",\"payDistribution\":{\"distributionInstructions\":[{\"distributionPercentage\":\"50\",\"depositAccount\":{\"financialParty\":{\"financialPartyID\":{\"schemeCode\":{\"codeValue\":\"260\"}},\"branchNameCode\":{\"codeValue\":\"58956\"}},\"financialAccount\":{\"accountNumber\":\"11118167\",\"typeCode\":{\"codeValue\":\"DP5\",\"shortName\":\"DEPOSIT ACCT5\"}}}}]}}}}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve meta for the request",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change/meta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change",
+						"meta"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a list of direct deposits",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/payroll/v2/workers/{aoid}/pay-distributions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"workers",
+						":aoid",
+						"pay-distributions"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "{undefined}"
+						}
+					],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve future dated direct deposit",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/payroll/v2/workers/{aoid}/pay-distributions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"workers",
+						":aoid",
+						"pay-distributions"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "{undefined}"
+						}
+					],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve list of direct deposit with a specific status",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/payroll/v2/workers/{aoid}/pay-distributions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"workers",
+						":aoid",
+						"pay-distributions"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "{undefined}"
+						}
+					],
+					"variable": []
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay Distribution",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/payroll/v2/workers/{aoid}/pay-distributions/{pay-distribution-id}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"workers",
+						":aoid",
+						"pay-distributions",
+						":pay-distribution-id"
+					],
+					"query": [],
+					"variable": [
+						{
+							"key": "pay-distribution-id",
+							"value": "{undefined}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay Distribution Meta",
+			"request": {
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"dataFormat": "string"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"dataFormat": "string"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/payroll/v2/workers/{aoid}/pay-distributions/meta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"workers",
+						":aoid",
+						"pay-distributions",
+						"meta"
+					],
+					"query": [],
+					"variable": []
+				}
+			},
+			"response": []
+		}
+	]
+}
