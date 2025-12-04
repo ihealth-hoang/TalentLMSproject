@@ -124,6 +124,18 @@ class TalentLMSClient:
             return [response]
         return response
 
+    def get_users(self) -> List[Dict]:
+        """
+        Retrieve all users from TalentLMS
+
+        Returns:
+            List of user dictionaries
+        """
+        result = self._make_request('/users')
+        if isinstance(result, dict):
+            return [result]
+        return result
+
     def get_user_by_email(self, email: str) -> Optional[Dict]:
         """
         Check if a user exists by email

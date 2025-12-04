@@ -308,10 +308,24 @@ def build_org_hierarchy(workers):
     return manager_map, worker_map
 
 
+def is_active_worker(worker):
+    """Check if a worker has an 'Active' status."""
+    status = (
+        worker.get("workerStatus", {})
+        .get("statusCode", {})
+        .get("codeValue", "Unknown")
+    )
+    return status == "Active"
+
+
 def print_org_tree(manager_map, worker_map, manager_id=None, indent=0):
-    """Recursively print the org tree."""
+    """Recursively print the org tree (active employees only)."""
     employees = manager_map.get(manager_id, [])
     for emp in employees:
+        # Skip non-active employees
+        if not is_active_worker(emp):
+            continue
+
         aoid = emp.get("associateOID") or (emp.get("workerID") or {}).get("idValue")
         name = emp.get("person", {}).get("legalName", {}).get("givenName", "Unknown")
         family = emp.get("person", {}).get("legalName", {}).get("familyName", "")

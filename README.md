@@ -32,6 +32,22 @@ python get_talentlms_data.py
 
 ## Script Usage
 
+### sync_adp_to_talentlms.py
+**Main script** - Sync active ADP employees to TalentLMS by creating accounts for those who don't have one.
+
+```sh
+# Sync only employees under a specific manager
+python sync_adp_to_talentlms.py --manager manager@ihealthlabs.com
+
+
+# Sync ALL active employees from ADP to TalentLMS (Don't run this alone!!)
+python sync_adp_to_talentlms.py
+```
+
+---
+
+### Additional Utility Scripts
+
 ### get_adp_info.py
 Fetch worker stats and org chart from ADP.
 
@@ -43,7 +59,7 @@ python get_adp_info.py --get_workers
 python get_adp_info.py --org_chart
 
 # Print org chart for specific manager (by email or name)
-python get_adp_info.py --org_chart manager@company.com
+python get_adp_info.py --org_chart manager@ihealthlabs.com
 ```
 
 ### sync_single_employee.py
@@ -51,14 +67,14 @@ Create TalentLMS account for a single employee from ADP data.
 
 ```sh
 # Sync by email, name, or worker ID
-python sync_single_employee.py employee@company.com
+python sync_single_employee.py employee@ihealthlabs.com
 ```
 
 ### delete_talentlms_user.py
 Permanently delete a TalentLMS user by email.
 
 ```sh
-python delete_talentlms_user.py user@company.com
+python delete_talentlms_user.py user@ihealthlabs.com
 ```
 
 ## Notes
